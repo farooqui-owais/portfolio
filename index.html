@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Owaise Farooqui — Sr. Software Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --card: #16161f;
+      --border: #1f1f2e;
+      --accent: #6c63ff;
+      --accent2: #ff6584;
+      --accent3: #43e97b;
+      --text: #e8e8f0;
+      --muted: #7a7a9a;
+      --font-display: 'Syne', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NOISE OVERLAY ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.2rem 4rem;
+      background: rgba(10,10,15,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 0.55rem 1.3rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      padding: 8rem 4rem 4rem;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.18;
+      pointer-events: none;
+    }
+    .hero-glow-1 { background: var(--accent); top: -200px; left: -100px; }
+    .hero-glow-2 { background: var(--accent2); bottom: -200px; right: -100px; }
+
+    .hero-inner {
+      max-width: 900px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-profile {
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s 0.05s ease both;
+    }
+
+    .hero-profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 32px;
+      object-fit: cover;
+      border: 2px solid var(--accent);
+      background: var(--surface);
+      box-shadow: 0 10px 30px rgba(108, 99, 255, 0.2);
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      border: 1px solid rgba(108,99,255,0.35);
+      padding: 0.4rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 2rem;
+      animation: fadeUp 0.8s ease both;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent3);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 800;
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 0.8s 0.1s ease both;
+    }
+    .hero-name .accent { color: var(--accent); }
+    .hero-name .line2 {
+      display: block;
+      -webkit-text-stroke: 1.5px rgba(108,99,255,0.5);
+      color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 0.8s 0.2s ease both;
+    }
+    .hero-desc strong { color: var(--text); font-weight: 500; }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 0.8s 0.3s ease both;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #fff;
+      background: var(--accent);
+      padding: 0.9rem 2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 30px rgba(108,99,255,0.35);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(108,99,255,0.5); }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-display);
+      font-size: 0.9rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-stats {
+      display: flex;
+      gap: 3rem;
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 1px solid var(--border);
+      animation: fadeUp 0.8s 0.4s ease both;
+    }
+    .stat-item {}
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.03em;
+    }
+    .stat-num span { color: var(--accent); }
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-top: 0.25rem;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 6rem 4rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-tag {
+      font-family: var(--font-display);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 500px;
+      line-height: 1.7;
+      margin-bottom: 3.5rem;
+    }
+
+    /* ── ABOUT ── */
+    #about { border-top: 1px solid var(--border); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.2rem;
+      font-size: 1.02rem;
+    }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+
+    .about-contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: rgba(108,99,255,0.12);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+    .contact-info {}
+    .contact-label {
+      font-size: 0.7rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+    .contact-value {
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .contact-value a { color: var(--accent); text-decoration: none; }
+    .contact-value a:hover { text-decoration: underline; }
+
+    /* ── SKILLS ── */
+    #skills { border-top: 1px solid var(--border); }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+
+    .skill-card-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .skill-icon {
+      font-size: 1.4rem;
+      width: 42px; height: 42px;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 10px;
+      background: rgba(108,99,255,0.1);
+    }
+    .skill-cat {
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tag {
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      font-family: var(--font-display);
+      font-weight: 600;
+    }
+
+    /* ── EXPERIENCE ── */
+    #experience { border-top: 1px solid var(--border); }
+
+    .exp-timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+    .exp-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), transparent);
+    }
+
+    .exp-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      transition: border-color 0.25s;
+    }
+    .exp-item:hover { border-color: var(--accent); }
+
+    .exp-item::before {
+      content: '';
+      position: absolute;
+      left: -2.45rem;
+      top: 2rem;
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
+    }
+
+    .exp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .exp-company {
+      font-family: var(--font-display);
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .exp-period {
+      font-size: 0.78rem;
+      font-family: var(--font-display);
+      font-weight: 600;
+      color: var(--accent);
+      background: rgba(108,99,255,0.12);
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+    }
+    .exp-title {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 1rem;
+      font-style: italic;
+    }
+    .exp-location {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 1rem;
+    }
+
+    .exp-bullets {
+      list-style: none;
+    }
+    .exp-bullets li {
+      position: relative;
+      padding-left: 1.2rem;
+      font-size: 0.92rem;
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+    .exp-bullets li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.8rem;
+    }
+
+    /* ── PROJECTS ── */
+    #projects { border-top: 1px solid var(--border); }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+
+    .project-number {
+      font-family: var(--font-display);
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+    .project-name {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--muted);
+      line-height: 1.65;
+      flex: 1;
+    }
+    .project-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+    .stack-tag {
+      font-size: 0.72rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      background: rgba(108,99,255,0.1);
+      border: 1px solid rgba(108,99,255,0.2);
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+    }
+
+    /* ── CONTACT ── */
+    #contact {
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+    #contact .section-title { margin-bottom: 0.5rem; }
+    #contact .section-sub { max-width: 420px; margin: 0 auto 2.5rem; }
+
+    .contact-grid {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+    .contact-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.2rem 1.8rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color 0.2s, transform 0.2s;
+      font-size: 0.92rem;
+    }
+    .contact-pill:hover { border-color: var(--accent); transform: translateY(-2px); color: var(--accent); }
+    .contact-pill-icon { font-size: 1.3rem; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 2.5rem 4rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+    footer span { color: var(--accent); }
+
+    /* ── MOBILE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      #hero { padding: 7rem 1.5rem 3rem; }
+      section { padding: 4rem 1.5rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-stats { gap: 2rem; flex-wrap: wrap; }
+      footer { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">OF<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="mailto:owais.khalilahmed@gmail.com" class="nav-cta">Hire Me</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-inner">
+      <div class="hero-profile">
+        <img src="profile.jpeg" alt="Owaise Farooqui" class="hero-profile-img" />
+      </div>
+      <div class="hero-badge">Helping Businesses Build Scalable Solutions</div>
+      <h1 class="hero-name">
+        Owaise<br>
+        <span class="line2">Farooqui</span>
+      </h1>
+      <p class="hero-desc">
+        <strong>Senior Software Engineer</strong> with 8+ years of experience delivering
+        scalable web applications, APIs, and cloud-native solutions across Python, Django,
+        AWS, Magento 2, and CI/CD pipelines.
+      </p>
+      <div class="hero-actions">
+        <a href="#experience" class="btn-primary">View My Work ↓</a>
+        <a href="#contact" class="btn-ghost">Get In Touch</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">8<span>+</span></div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">10<span>+</span></div>
+          <div class="stat-label">Key Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">99<span>.95%</span></div>
+          <div class="stat-label">Uptime Maintained</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100<span>+</span></div>
+          <div class="stat-label">Issues Resolved</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-tag">// About Me</div>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I'm a <strong>Senior Software Engineer</strong> based in Pune, Maharashtra,
+          with over 8 years of hands-on experience building robust, scalable web solutions
+          that drive real business outcomes.
+        </p>
+        <p>
+          My stack spans the full development lifecycle — from <strong>frontend interfaces</strong>
+          in React and JavaScript, to <strong>backend APIs</strong> in Python/Django and PHP,
+          to cloud infrastructure on <strong>AWS</strong> with Docker-powered deployments.
+        </p>
+        <p>
+          I've led engineering teams, conducted code reviews, architected microservices, and
+          managed Magento 2 e-commerce platforms with near-perfect uptime. I thrive at
+          the intersection of technical depth and team collaboration.
+        </p>
+        <p>
+          Holding an <strong>MCA from Pune University</strong> and certifications in
+          Web Technologies (C-DAC) and Cloud & DevOps (Learnbay, 2024), I'm always
+          levelling up with the latest in the industry.
+        </p>
+      </div>
+      <div class="about-contact-card">
+        <div class="contact-row">
+          <div class="contact-icon">📍</div>
+          <div class="contact-info">
+            <div class="contact-label">Location</div>
+            <div class="contact-value">Pune, Maharashtra, India</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">📱</div>
+          <div class="contact-info">
+            <div class="contact-label">Mobile</div>
+            <div class="contact-value">+91 8806006301</div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-info">
+            <div class="contact-label">Email</div>
+            <div class="contact-value"><a href="mailto:owais.khalilahmed@gmail.com">owais.khalilahmed@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">💼</div>
+          <div class="contact-info">
+            <div class="contact-label">LinkedIn</div>
+            <div class="contact-value"><a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank">owaise-farooqui</a></div>
+          </div>
+        </div>
+        <div class="contact-row">
+          <div class="contact-icon">🎓</div>
+          <div class="contact-info">
+            <div class="contact-label">Education</div>
+            <div class="contact-value">MCA — Pune University, 2012</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-tag">// Skills</div>
+    <h2 class="section-title">Tech Stack</h2>
+    <p class="section-sub">Tools and technologies I work with to bring ideas to life.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon">🎨</div>
+          <div class="skill-cat">Frontend Technologies</div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">HTML5</span>
+          <span class="tag">CSS3</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">ReactJS</span>
+          <span class="tag">Bootstrap</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon">⚙️</div>
+          <div class="skill-cat">Backend Technologies</div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Python</span>
+          <span class="tag">PHP</span>
+          <span class="tag">Node.js</span>
+
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon">🛒</div>
+          <div class="skill-cat">CMS & Frameworks</div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Magento 2</span>
+          <span class="tag">WordPress</span>
+          <span class="tag">Django</span>
+          <span class="tag">CodeIgniter</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon">☁️</div>
+          <div class="skill-cat">Cloud & DevOps</div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">AWS</span>
+          <span class="tag">Docker</span>
+          <span class="tag">Git</span>
+          <span class="tag">CI/CD</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon">🗄️</div>
+          <div class="skill-cat">Databases</div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">MySQL</span>
+          <span class="tag">PostgreSQL</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon">🏗️</div>
+          <div class="skill-cat">Architecture</div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">REST APIs</span>
+          <span class="tag">Agile / Scrum</span>
+          <span class="tag">Code Review</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-tag">// Experience</div>
+    <h2 class="section-title">Work History</h2>
+    <p class="section-sub">8+ years building products across e-commerce, healthcare, SaaS and more.</p>
+    <div class="exp-timeline">
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-company">Accion Labs Pvt Ltd</div>
+          <div class="exp-period">May 2022 – Present</div>
+        </div>
+        <div class="exp-title">Principal Software Engineer</div>
+        <div class="exp-location">📍 Pune, Maharashtra</div>
+        <ul class="exp-bullets">
+          <li>Coordinated across engineering, product, and operations teams to deliver features aligned with business objectives.</li>
+          <li>Conducted peer code reviews to uphold coding standards and consistency.</li>
+          <li>Designed and implemented reusable APIs and components for microservices architecture.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-company">Tribugs Pvt Ltd</div>
+          <div class="exp-period">Sep 2021 – May 2022</div>
+        </div>
+        <div class="exp-title">Sr. Software Engineer</div>
+        <div class="exp-location">📍 Nagpur, Maharashtra</div>
+        <ul class="exp-bullets">
+          <li>Resolved 100+ Magento issues, maintaining 99.95% uptime for website stability.</li>
+          <li>Performed regular patching, security audits, and backups of Magento-based stores.</li>
+          <li>Identified and resolved performance bottlenecks improving overall system speed.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-company">Pragmatic Techsoft Pvt Ltd</div>
+          <div class="exp-period">Sep 2020 – Sep 2021</div>
+        </div>
+        <div class="exp-title">Sr. Software Engineer</div>
+        <div class="exp-location">📍 Pune, Maharashtra</div>
+        <ul class="exp-bullets">
+          <li>Reduced website loading time by 20% by optimizing WordPress plugins.</li>
+          <li>Integrated cutting-edge technologies into existing systems for enhanced functionality.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-company">Everseen Pvt Ltd</div>
+          <div class="exp-period">Dec 2019 – Nov 2020</div>
+        </div>
+        <div class="exp-title">Sr. Software Engineer</div>
+        <div class="exp-location">📍 Pune, Maharashtra</div>
+        <ul class="exp-bullets">
+          <li>Designed and coded software per detailed technical specifications ensuring top quality.</li>
+          <li>Streamlined processes that reduced user-reported issues significantly.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-company">Izeetek Solutions</div>
+          <div class="exp-period">May 2019 – Dec 2019</div>
+        </div>
+        <div class="exp-title">Sr. Software Engineer</div>
+        <div class="exp-location">📍 Pune, Maharashtra</div>
+        <ul class="exp-bullets">
+          <li>Developed innovative software solutions by uncovering pain points and mapping them to effective solutions.</li>
+          <li>Determined system specifications, standards, and programming requirements for robust scalable solutions.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-company">Aptara Pvt Ltd</div>
+          <div class="exp-period">May 2018 – Mar 2019</div>
+        </div>
+        <div class="exp-title">Software Engineer</div>
+        <div class="exp-location">📍 Pune, Maharashtra</div>
+        <ul class="exp-bullets">
+          <li>Designed and coded software per technical specifications ensuring high quality and performance.</li>
+          <li>Evaluated technical proposals and executed system enhancements following full SDLC.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-company">Fulcrum Worldwide Pvt Ltd</div>
+          <div class="exp-period">Jul 2016 – Jul 2017</div>
+        </div>
+        <div class="exp-title">Software Engineer</div>
+        <div class="exp-location">📍 Pune, Maharashtra</div>
+        <ul class="exp-bullets">
+          <li>Created Magento modules including custom payment gateways and third-party integrations.</li>
+          <li>Collaborated with cross-functional teams to design, develop, and launch new e-commerce websites.</li>
+          <li>Managed multiple projects simultaneously adhering to strict deadlines and budget constraints.</li>
+        </ul>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-top">
+          <div class="exp-company">Oxcytech System</div>
+          <div class="exp-period">Dec 2013 – Jun 2016</div>
+        </div>
+        <div class="exp-title">PHP Developer</div>
+        <div class="exp-location">📍 Pune, Maharashtra</div>
+        <ul class="exp-bullets">
+          <li>Crafted tailored software applications from functional analysis to final deployment.</li>
+          <li>Designed and coded software fulfilling client requirements per technical specifications.</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-tag">// Projects</div>
+    <h2 class="section-title">Key Projects</h2>
+    <p class="section-sub">Selected work that highlights my technical breadth and impact.</p>
+    <div class="projects-grid">
+
+      <div class="project-card">
+        <div class="project-number">Project 01</div>
+        <div class="project-name">Thinkproject</div>
+        <div class="project-desc">Led a team of senior engineers to implement product features based on stakeholder needs for a construction project management platform.</div>
+        <div class="project-stack">
+          <span class="stack-tag">HTML5</span>
+          <span class="stack-tag">Node.js</span>
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Django</span>
+          <span class="stack-tag">MySQL</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">Project 02</div>
+        <div class="project-name">Global Furniture Group</div>
+        <div class="project-desc">Designed and developed Magento 2 modules per client specifications, mentored junior engineers in an Agile development environment.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Magento 2</span>
+          <span class="stack-tag">Node.js</span>
+          <span class="stack-tag">PHP</span>
+          <span class="stack-tag">MySQL</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">Project 03</div>
+        <div class="project-name">Tiffin Management</div>
+        <div class="project-desc">Built a Magento 2–Odoo sync module handling 1,000+ records — synchronizing customers, categories, products, orders and invoices bidirectionally.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Html</span>
+          <span class="stack-tag">Codeigniter</span>
+          <span class="stack-tag">Mysql</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">Project 04</div>
+        <div class="project-name">Covifight.info</div>
+        <div class="project-desc">Built a cron-powered WordPress app for real-time pandemic data. Implemented automated backups, log rotation, and report generation.</div>
+        <div class="project-stack">
+          <span class="stack-tag">WordPress</span>
+          <span class="stack-tag">PHP</span>
+          <span class="stack-tag">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">Project 05</div>
+        <div class="project-name">Commissionly</div>
+        <div class="project-desc">Developed software solutions by studying information needs and collaborating with project managers. Diagnosed complex technical issues and delivered efficient fixes.</div>
+        <div class="project-stack">
+          <span class="stack-tag">PHP</span>
+          <span class="stack-tag">MySQL</span>
+          <span class="stack-tag">jQuery</span>
+          <span class="stack-tag">AJAX</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">Project 06</div>
+        <div class="project-name">Tealeaves (Magento)</div>
+        <div class="project-desc">Built and integrated custom Magento extensions, connected payment gateways, shipping APIs, and ERP/CRM systems. Debugged and fixed complex frontend & backend issues.</div>
+        <div class="project-stack">
+          <span class="stack-tag">Magento</span>
+          <span class="stack-tag">PHP</span>
+          <span class="stack-tag">MySQL</span>
+          <span class="stack-tag">jQuery</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">Project 07</div>
+        <div class="project-name">Evise eLearning</div>
+        <div class="project-desc">Acted as technical lead — customized pages, refactored code for maintainability, and integrated external tools into the project ecosystem.</div>
+        <div class="project-stack">
+          <span class="stack-tag">PHP</span>
+          <span class="stack-tag">MySQL</span>
+          <span class="stack-tag">JavaScript</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-number">Project 08</div>
+        <div class="project-name">Tiffin Management</div>
+        <div class="project-desc">Developed features and reolve the business problem by implemnting and scaling the project</div>
+        <div class="project-stack">
+          <span class="stack-tag">CodeIgniter</span>
+          <span class="stack-tag">PHP</span>
+          <span class="stack-tag">JavaScript</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-tag">// Contact</div>
+    <h2 class="section-title">Let's Connect</h2>
+    <p class="section-sub">Open to new opportunities, collaborations, or just a good tech conversation.</p>
+    <a href="mailto:owais.khalilahmed@gmail.com" class="btn-primary" style="display:inline-flex;">Send Me an Email ✉️</a>
+    <div class="contact-grid">
+      <a href="mailto:owais.khalilahmed@gmail.com" class="contact-pill">
+        <span class="contact-pill-icon">✉️</span>
+        owais.khalilahmed@gmail.com
+      </a>
+      <a href="tel:+918806006301" class="contact-pill">
+        <span class="contact-pill-icon">📱</span>
+        +91 8806006301
+      </a>
+      <a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank" class="contact-pill">
+        <span class="contact-pill-icon">💼</span>
+        LinkedIn Profile
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    Designed & built with ♥ — <span>Owaise Farooqui</span> © 2025
+  </footer>
+
+</body>
+</html>
