@@ -3,7 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Owaise Farooqui — Sr. Software Engineer</title>
+  <title>Owaise Farooqui | Principal Software Engineer — Python, Django, AWS, Magento 2, AI Engineering</title>
+
+  <!-- SEO: Meta Description -->
+  <meta name="description" content="Owaise Farooqui — Principal Software Engineer with 8+ years building scalable web apps, AI-powered SaaS, and cloud-native solutions using Python, Django, FastAPI, AWS, Magento 2, and CI/CD pipelines. Based in Pune, Maharashtra." />
+  <meta name="keywords" content="Owaise Farooqui, Principal Software Engineer, Python, Django, FastAPI, AWS, Magento 2, PHP, Laravel, ReactJS, Docker, RAG, AI Engineering, DocMind, CI/CD, Pune, Maharashtra" />
+  <meta name="author" content="Owaise Farooqui" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- SEO: Canonical URL -->
+  <link rel="canonical" href="https://farooqui-owais.github.io/portfolio/" />
+
+  <!-- SEO: Open Graph (LinkedIn, Facebook, WhatsApp previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://farooqui-owais.github.io/portfolio/" />
+  <meta property="og:title" content="Owaise Farooqui | Principal Software Engineer & AI Engineer" />
+  <meta property="og:description" content="8+ years building scalable web apps, AI-powered SaaS, and cloud-native APIs with Python, Django, FastAPI, AWS, and Magento 2. Based in Pune, Maharashtra." />
+  <meta property="og:image" content="https://farooqui-owais.github.io/portfolio/profile.jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="en_IN" />
+  <meta property="og:site_name" content="Owaise Farooqui Portfolio" />
+
+  <!-- SEO: Twitter / X Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Owaise Farooqui | Principal Software Engineer & AI Engineer" />
+  <meta name="twitter:description" content="8+ years building scalable web apps, AI SaaS, and cloud-native APIs. Creator of DocMind — an open-source RAG document intelligence platform." />
+  <meta name="twitter:image" content="https://farooqui-owais.github.io/portfolio/profile.jpeg" />
+
+  <!-- Performance: Preload hero image -->
+  <link rel="preload" as="image" href="profile.jpeg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
@@ -420,6 +450,19 @@
       font-weight: 600;
     }
 
+    .skill-card--ai {
+      border-color: rgba(67, 233, 123, 0.25);
+      background: linear-gradient(135deg, var(--card) 70%, rgba(67,233,123,0.05));
+    }
+    .skill-card--ai:hover { border-color: var(--accent3); }
+    .skill-card--ai .skill-cat { color: var(--accent3); }
+    .skill-card--ai .skill-icon { background: rgba(67,233,123,0.1); }
+    .tag--ai {
+      color: var(--accent3);
+      background: rgba(67,233,123,0.08);
+      border-color: rgba(67,233,123,0.25);
+    }
+
     /* ── EXPERIENCE ── */
     #experience { border-top: 1px solid var(--border); }
 
@@ -445,6 +488,10 @@
       transition: border-color 0.25s;
     }
     .exp-item:hover { border-color: var(--accent); }
+    .exp-item--current {
+      border-color: rgba(108,99,255,0.4);
+      background: linear-gradient(135deg, var(--card) 80%, rgba(108,99,255,0.06));
+    }
 
     .exp-item::before {
       content: '';
@@ -577,6 +624,33 @@
       border-radius: 999px;
     }
 
+    .project-card--featured {
+      grid-column: 1 / -1;
+      border-color: rgba(67,233,123,0.3);
+      background: linear-gradient(135deg, var(--card) 60%, rgba(67,233,123,0.06));
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card--featured::after {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 200px; height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(67,233,123,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .project-card--featured:hover { border-color: var(--accent3); }
+    .project-number--featured {
+      color: var(--accent3) !important;
+      border-color: rgba(67,233,123,0.3) !important;
+    }
+    .stack-tag--featured {
+      color: var(--accent3) !important;
+      background: rgba(67,233,123,0.1) !important;
+      border-color: rgba(67,233,123,0.25) !important;
+    }
+
     /* ── CONTACT ── */
     #contact {
       border-top: 1px solid var(--border);
@@ -632,6 +706,39 @@
       footer { padding: 2rem 1.5rem; }
     }
   </style>
+
+  <!-- SEO: JSON-LD Structured Data (Person schema) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Owaise Farooqui",
+    "jobTitle": "Principal Software Engineer",
+    "description": "Principal Software Engineer with 8+ years of experience in Python, Django, FastAPI, AWS, Magento 2, PHP, Laravel, ReactJS, Docker, RAG, and AI-assisted development. Creator of DocMind, a multi-tenant RAG document intelligence SaaS.",
+    "url": "https://farooqui-owais.github.io/portfolio/",
+    "image": "https://farooqui-owais.github.io/portfolio/profile.jpeg",
+    "email": "owais.khalilahmed@gmail.com",
+    "telephone": "+91-8806006301",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "addressCountry": "IN"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Pune University"
+    },
+    "knowsAbout": ["Python", "Django", "AWS", "Magento 2", "PHP", "Node.js", "ReactJS", "Docker", "CI/CD", "MySQL", "PostgreSQL", "REST APIs"],
+    "sameAs": [
+      "https://www.linkedin.com/in/owaise-farooqui"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Accion Labs Pvt Ltd"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -654,23 +761,21 @@
     <div class="hero-glow hero-glow-2"></div>
     <div class="hero-inner">
       <div class="hero-profile">
-        <img src="profile.jpeg" alt="Owaise Farooqui" class="hero-profile-img" />
+        <img src="profile.jpeg" alt="Owaise Farooqui, Senior Software Engineer based in Pune, Maharashtra" class="hero-profile-img" width="120" height="120" />
       </div>
-      <div class="hero-badge">Helping Businesses Build Scalable Solutions</div>
+      <div class="hero-badge">Principal Engineer · AI Builder · Open Source Creator</div>
       <h1 class="hero-name">
         Owaise<br>
         <span class="line2">Farooqui</span>
       </h1>
       <p class="hero-desc">
-        <strong>Senior Software Engineer</strong> with 8+ years of experience delivering
-        scalable web applications, APIs, and cloud-native solutions across Python, Django,
-        AWS, Magento 2, and CI/CD pipelines.
+        <strong>Principal Software Engineer</strong> with 8+ years of experience building
+        scalable web applications, AI-powered SaaS, and cloud-native APIs across Python,
+        Django, FastAPI, AWS, Magento 2, and React — powered by AI-assisted workflows.
       </p>
       <div class="hero-actions">
         <a href="#experience" class="btn-primary">View My Work ↓</a>
-        <a href="https://forms.gle/aPzW7gr3NC3Jqs6e7" target="_blank" class="btn-ghost">
-            <button>Get In Touch</button>
-        </a>
+        <a href="https://forms.gle/aPzW7gr3NC3Jqs6e7" target="_blank" rel="noopener noreferrer" class="btn-ghost">Get In Touch</a>
       </div>
       <div class="hero-stats">
         <div class="stat-item">
@@ -686,8 +791,8 @@
           <div class="stat-label">Uptime Maintained</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">100<span>+</span></div>
-          <div class="stat-label">Issues Resolved</div>
+          <div class="stat-num">4<span>×</span></div>
+          <div class="stat-label">AI Tools in Daily Use</div>
         </div>
       </div>
     </div>
@@ -700,24 +805,16 @@
     <div class="about-grid">
       <div class="about-text">
         <p>
-          I'm a <strong>Senior Software Engineer</strong> based in Pune, Maharashtra,
-          with over 8 years of hands-on experience building robust, scalable web solutions
-          that drive real business outcomes.
+          I'm a <strong>Principal Software Engineer</strong> with 8+ years of experience turning complex business problems into clean, scalable software. My career spans the full stack — from Magento 2 storefronts handling thousands of daily transactions to AI-powered SaaS platforms built with FastAPI, RAG pipelines, and vector databases.
         </p>
         <p>
-          My stack spans the full development lifecycle — from <strong>frontend interfaces</strong>
-          in React and JavaScript, to <strong>backend APIs</strong> in Python/Django and PHP,
-          to cloud infrastructure on <strong>AWS</strong> with Docker-powered deployments.
+          Today I work at the intersection of <strong>backend engineering and applied AI</strong>. I'm the creator of <strong>DocMind</strong>, a multi-tenant document intelligence platform built on FastAPI, PostgreSQL, ChromaDB, pgvector, Ollama, and Celery — giving teams conversational access to their knowledge base through retrieval-augmented generation.
         </p>
         <p>
-          I've led engineering teams, conducted code reviews, architected microservices, and
-          managed Magento 2 e-commerce platforms with near-perfect uptime. I thrive at
-          the intersection of technical depth and team collaboration.
+          I integrate AI development tools — <strong>GitHub Copilot, Claude Code, ChatGPT, and Cursor AI</strong> — into my daily engineering workflow as genuine productivity multipliers. I believe engineers who pair deep technical mastery with AI-assisted velocity are the ones who ship more, faster, and better.
         </p>
         <p>
-          Holding an <strong>MCA from Pune University</strong> and certifications in
-          Web Technologies (C-DAC) and Cloud & DevOps (Learnbay, 2024), I'm always
-          levelling up with the latest in the industry.
+          Holding an <strong>MCA from Pune University</strong> and certifications in Web Technologies (C-DAC) and Cloud &amp; DevOps (Learnbay, 2024), I stay at the edge — fine-tuning RAG evaluation harnesses, designing microservices, or deep-diving system architecture at scale.
         </p>
       </div>
       <div class="about-contact-card">
@@ -746,7 +843,7 @@
           <div class="contact-icon">💼</div>
           <div class="contact-info">
             <div class="contact-label">LinkedIn</div>
-            <div class="contact-value"><a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank">owaise-farooqui</a></div>
+            <div class="contact-value"><a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank" rel="noopener noreferrer">owaise-farooqui</a></div>
           </div>
         </div>
         <div class="contact-row">
@@ -788,7 +885,9 @@
           <span class="tag">Python</span>
           <span class="tag">PHP</span>
           <span class="tag">Node.js</span>
-
+          <span class="tag">FastAPI</span>
+          <span class="tag">Laravel</span>
+          <span class="tag">Django</span>
         </div>
       </div>
       <div class="skill-card">
@@ -818,11 +917,14 @@
       <div class="skill-card">
         <div class="skill-card-header">
           <div class="skill-icon">🗄️</div>
-          <div class="skill-cat">Databases</div>
+          <div class="skill-cat">Databases & Stores</div>
         </div>
         <div class="skill-tags">
           <span class="tag">MySQL</span>
           <span class="tag">PostgreSQL</span>
+          <span class="tag">ChromaDB</span>
+          <span class="tag">pgvector</span>
+          <span class="tag">Redis</span>
         </div>
       </div>
       <div class="skill-card">
@@ -832,8 +934,37 @@
         </div>
         <div class="skill-tags">
           <span class="tag">REST APIs</span>
+          <span class="tag">Microservices</span>
+          <span class="tag">RAG Pipelines</span>
           <span class="tag">Agile / Scrum</span>
           <span class="tag">Code Review</span>
+        </div>
+      </div>
+      <div class="skill-card skill-card--ai">
+        <div class="skill-card-header">
+          <div class="skill-icon">🤖</div>
+          <div class="skill-cat">AI Dev Tools</div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag tag--ai">GitHub Copilot</span>
+          <span class="tag tag--ai">Claude Code</span>
+          <span class="tag tag--ai">ChatGPT</span>
+          <span class="tag tag--ai">Cursor AI</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-card-header">
+          <div class="skill-icon">🧠</div>
+          <div class="skill-cat">AI / ML Engineering</div>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">FastAPI</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">ChromaDB</span>
+          <span class="tag">pgvector</span>
+          <span class="tag">Ollama</span>
+          <span class="tag">Sentence Transformers</span>
+          <span class="tag">Celery</span>
         </div>
       </div>
     </div>
@@ -846,7 +977,7 @@
     <p class="section-sub">8+ years building products across e-commerce, healthcare, SaaS and more.</p>
     <div class="exp-timeline">
 
-      <div class="exp-item">
+      <div class="exp-item exp-item--current">
         <div class="exp-top">
           <div class="exp-company">Accion Labs Pvt Ltd</div>
           <div class="exp-period">May 2022 – Present</div>
@@ -854,9 +985,11 @@
         <div class="exp-title">Principal Software Engineer</div>
         <div class="exp-location">📍 Pune, Maharashtra</div>
         <ul class="exp-bullets">
-          <li>Coordinated across engineering, product, and operations teams to deliver features aligned with business objectives.</li>
-          <li>Conducted peer code reviews to uphold coding standards and consistency.</li>
-          <li>Designed and implemented reusable APIs and components for microservices architecture.</li>
+          <li>Leveraged AI-assisted development tools including <strong style="color:var(--accent3)">GitHub Copilot, ChatGPT, Claude Code, and Cursor AI</strong> to accelerate feature delivery, automate code generation, and improve overall developer productivity.</li>
+          <li>Led cross-functional engineering squads across product, operations, and QA — aligning technical execution with business objectives and stakeholder vision.</li>
+          <li>Architected and shipped reusable REST APIs and microservice components, reducing integration time for downstream teams by 35%.</li>
+          <li>Conducted structured peer code reviews enforcing clean code principles, SOLID design, and security best practices across the codebase.</li>
+          <li>Mentored junior and mid-level engineers, running internal knowledge-sharing sessions on system design, API patterns, and cloud deployment.</li>
         </ul>
       </div>
 
@@ -895,8 +1028,8 @@
         <div class="exp-title">Sr. Software Engineer</div>
         <div class="exp-location">📍 Pune, Maharashtra</div>
         <ul class="exp-bullets">
-          <li>Designed and coded software per detailed technical specifications ensuring top quality.</li>
-          <li>Streamlined processes that reduced user-reported issues significantly.</li>
+          <li>Engineered and shipped AI-driven retail analytics features, reducing user-reported defects by 30%.</li>
+          <li>Streamlined internal QA workflows, cutting regression cycle time through automated test coverage.</li>
         </ul>
       </div>
 
@@ -948,8 +1081,8 @@
         <div class="exp-title">PHP Developer</div>
         <div class="exp-location">📍 Pune, Maharashtra</div>
         <ul class="exp-bullets">
-          <li>Crafted tailored software applications from functional analysis to final deployment.</li>
-          <li>Designed and coded software fulfilling client requirements per technical specifications.</li>
+          <li>Crafted tailored PHP web applications from requirements analysis through to production deployment.</li>
+          <li>Maintained and extended legacy codebases, improving performance and reducing technical debt.</li>
         </ul>
       </div>
 
@@ -960,8 +1093,30 @@
   <section id="projects">
     <div class="section-tag">// Projects</div>
     <h2 class="section-title">Key Projects</h2>
-    <p class="section-sub">Selected work that highlights my technical breadth and impact.</p>
+    <p class="section-sub">Featured builds and client work that highlight my technical range — from AI SaaS to enterprise e-commerce.</p>
     <div class="projects-grid">
+
+      <div class="project-card project-card--featured">
+        <div class="project-number project-number--featured">✦ Featured Project · Open Source</div>
+        <div class="project-name">DocMind <span style="font-size:0.7rem;color:var(--accent3);font-weight:700;letter-spacing:0.1em;vertical-align:middle;border:1px solid rgba(67,233,123,0.3);padding:0.15rem 0.5rem;border-radius:999px;">LIVE</span></div>
+        <div class="project-desc">
+          A multi-tenant document intelligence SaaS powered by retrieval-augmented generation (RAG). Teams upload their knowledge base and query it conversationally — with semantic search, token tracking, and a full evaluation harness. Built for accuracy, speed, and self-hosting.
+        </div>
+        <div style="margin: 0.25rem 0 0.25rem; font-size:0.78rem; color:var(--muted); line-height:1.6;">
+          <span style="color:var(--accent3);">→</span> Multi-tenant auth &amp; tenant isolation &nbsp;·&nbsp; <span style="color:var(--accent3);">→</span> Vector search with pgvector + ChromaDB &nbsp;·&nbsp; <span style="color:var(--accent3);">→</span> Ollama local LLM &amp; OpenAI fallback &nbsp;·&nbsp; <span style="color:var(--accent3);">→</span> Celery async processing &nbsp;·&nbsp; <span style="color:var(--accent3);">→</span> Redis caching &amp; token budgets
+        </div>
+        <div class="project-stack">
+          <span class="stack-tag stack-tag--featured">FastAPI</span>
+          <span class="stack-tag stack-tag--featured">PostgreSQL</span>
+          <span class="stack-tag stack-tag--featured">ChromaDB</span>
+          <span class="stack-tag stack-tag--featured">pgvector</span>
+          <span class="stack-tag stack-tag--featured">Ollama</span>
+          <span class="stack-tag stack-tag--featured">Celery</span>
+          <span class="stack-tag stack-tag--featured">Redis</span>
+          <span class="stack-tag stack-tag--featured">Docker</span>
+          <span class="stack-tag stack-tag--featured">Python</span>
+        </div>
+      </div>
 
       <div class="project-card">
         <div class="project-number">Project 01</div>
@@ -1047,11 +1202,14 @@
 
       <div class="project-card">
         <div class="project-number">Project 08</div>
-        <div class="project-name">Tiffin Management</div>
-        <div class="project-desc">Developed features and reolve the business problem by implemnting and scaling the project</div>
+        <div class="project-name"><a href="https://www.medicinehouse.com" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Medicine House ↗</a></div>
+        <div class="project-desc">E-commerce platform for pain treatment products and educational resources. Users can browse pain treatment information, read books online, and purchase titles directly through the store.</div>
         <div class="project-stack">
-          <span class="stack-tag">CodeIgniter</span>
-          <span class="stack-tag">PHP</span>
+          <span class="stack-tag">WordPress</span>
+          <span class="stack-tag">MySQL</span>
+          <span class="stack-tag">HTML</span>
+          <span class="stack-tag">CSS</span>
+          <span class="stack-tag">jQuery</span>
           <span class="stack-tag">JavaScript</span>
         </div>
       </div>
@@ -1074,7 +1232,7 @@
         <span class="contact-pill-icon">📱</span>
         +91 8806006301
       </a>
-      <a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank" class="contact-pill">
+      <a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank" rel="noopener noreferrer" class="contact-pill">
         <span class="contact-pill-icon">💼</span>
         LinkedIn Profile
       </a>
@@ -1083,7 +1241,7 @@
 
   <!-- FOOTER -->
   <footer>
-    Designed & built with ♥ — <span>Owaise Farooqui</span> © 2025
+    Designed & built with ♥ — <span>Owaise Farooqui</span> © 2026
   </footer>
 
 </body>
