@@ -1,1263 +1,726 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Owaise Farooqui | Principal Software Engineer — Python, Django, AWS, Magento 2, AI Engineering</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Owaise Farooqui — Principal Software Engineer & RAG / AI Systems Builder</title>
+<meta name="description" content="Principal Software Engineer with 10+ years building production-grade full-stack and AI-powered systems. Creator of DocMind — multi-tenant RAG Document Intelligence SaaS. Based in Pune, Maharashtra."/>
+<meta name="keywords" content="Owaise Farooqui, Principal Software Engineer, Python, FastAPI, RAG, pgvector, ChromaDB, TypeScript, Node.js, React, Docker, Kubernetes, AWS, Magento 2, AI Engineering, DocMind, Pune"/>
+<meta name="author" content="Owaise Farooqui"/>
+<meta name="robots" content="index,follow"/>
+<link rel="canonical" href="https://farooqui-owais.github.io/portfolio/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://farooqui-owais.github.io/portfolio/"/>
+<meta property="og:title" content="Owaise Farooqui — Principal Software Engineer & RAG / AI Systems Builder"/>
+<meta property="og:description" content="Principal Software Engineer with 10+ years. Creator of DocMind RAG SaaS. FastAPI · pgvector · TypeScript · Node.js · AWS · Docker · Kubernetes."/>
+<meta property="og:image" content="https://farooqui-owais.github.io/portfolio/profile.jpeg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:locale" content="en_IN"/>
+<meta property="og:site_name" content="Owaise Farooqui"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Owaise Farooqui — Principal Software Engineer & AI Builder"/>
+<meta name="twitter:description" content="10+ years building production-grade full-stack and AI systems. Creator of DocMind — multi-tenant RAG SaaS. Open to senior IC roles."/>
+<meta name="twitter:image" content="https://farooqui-owais.github.io/portfolio/profile.jpeg"/>
+<link rel="preload" as="image" href="profile.jpeg"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Syne:wght@700;800&display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Person",
+  "name":"Owaise Farooqui",
+  "jobTitle":"Principal Software Engineer",
+  "description":"Principal Software Engineer with 10+ years building production-grade full-stack and AI-powered systems. Creator of DocMind, a multi-tenant RAG Document Intelligence SaaS.",
+  "url":"https://farooqui-owais.github.io/portfolio/",
+  "image":"https://farooqui-owais.github.io/portfolio/profile.jpeg",
+  "email":"owaisfarooqui.dev@gmail.com",
+  "telephone":"+91-8806006301",
+  "address":{"@type":"PostalAddress","addressLocality":"Pune","addressRegion":"Maharashtra","addressCountry":"IN"},
+  "alumniOf":{"@type":"CollegeOrUniversity","name":"Pune University"},
+  "knowsAbout":["Python","FastAPI","TypeScript","Node.js","React","RAG","pgvector","ChromaDB","Docker","Kubernetes","AWS","PostgreSQL","Redis","Celery","Microservices","Jest","Pytest"],
+  "sameAs":["https://www.linkedin.com/in/owaise-farooqui","https://github.com/farooqui-owais"],
+  "worksFor":{"@type":"Organization","name":"Accion Labs Pvt Ltd"}
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#060608;
+  --s1:#0d0d12;
+  --s2:#111118;
+  --card:#13131a;
+  --border:rgba(255,255,255,0.07);
+  --border-hi:rgba(255,255,255,0.14);
+  --a1:#7c6dfa;
+  --a2:#06b6d4;
+  --a3:#10b981;
+  --a4:#f59e0b;
+  --text:#f0f0f8;
+  --muted:#6b6b8a;
+  --muted2:#4a4a62;
+  --font-display:'Syne',sans-serif;
+  --font-body:'Inter',sans-serif;
+  --radius:14px;
+  --radius-lg:20px;
+  --radius-xl:28px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:16px;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 
-  <!-- SEO: Meta Description -->
-  <meta name="description" content="Owaise Farooqui — Principal Software Engineer with 8+ years building scalable web apps, AI-powered SaaS, and cloud-native solutions using Python, Django, FastAPI, AWS, Magento 2, and CI/CD pipelines. Based in Pune, Maharashtra." />
-  <meta name="keywords" content="Owaise Farooqui, Principal Software Engineer, Python, Django, FastAPI, AWS, Magento 2, PHP, Laravel, ReactJS, Docker, RAG, AI Engineering, DocMind, CI/CD, Pune, Maharashtra" />
-  <meta name="author" content="Owaise Farooqui" />
-  <meta name="robots" content="index, follow" />
+/* ── GRID OVERLAY ── */
+body::after{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0}
 
-  <!-- SEO: Canonical URL -->
-  <link rel="canonical" href="https://farooqui-owais.github.io/portfolio/" />
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:64px;background:rgba(6,6,8,0.8);backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--border);transition:background 0.3s}
+.nav-logo{font-family:var(--font-display);font-size:1.1rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.nav-logo em{color:var(--a1);font-style:normal}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.8rem;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:0.02em;transition:color 0.2s}
+.nav-links a:hover{color:var(--text)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.nav-gh{display:flex;align-items:center;gap:0.4rem;font-size:0.8rem;color:var(--muted);text-decoration:none;transition:color 0.2s}
+.nav-gh:hover{color:var(--text)}
+.nav-gh svg{width:16px;height:16px;fill:currentColor}
+.nav-cta{font-size:0.8rem;font-weight:600;color:var(--bg);background:var(--text);padding:0.45rem 1.1rem;border-radius:99px;text-decoration:none;transition:opacity 0.2s,transform 0.2s}
+.nav-cta:hover{opacity:0.85;transform:translateY(-1px)}
+.nav-burger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:4px}
+.nav-burger span{display:block;width:22px;height:2px;background:var(--muted);border-radius:2px;transition:0.3s}
 
-  <!-- SEO: Open Graph (LinkedIn, Facebook, WhatsApp previews) -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://farooqui-owais.github.io/portfolio/" />
-  <meta property="og:title" content="Owaise Farooqui | Principal Software Engineer & AI Engineer" />
-  <meta property="og:description" content="8+ years building scalable web apps, AI-powered SaaS, and cloud-native APIs with Python, Django, FastAPI, AWS, and Magento 2. Based in Pune, Maharashtra." />
-  <meta property="og:image" content="https://farooqui-owais.github.io/portfolio/profile.jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="en_IN" />
-  <meta property="og:site_name" content="Owaise Farooqui Portfolio" />
+/* ── HERO ── */
+#hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:8rem 2.5rem 5rem;position:relative;overflow:hidden;z-index:1}
+.mesh-1{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(124,109,250,0.18) 0%,transparent 70%);top:-100px;left:-150px;pointer-events:none;animation:drift1 12s ease-in-out infinite}
+.mesh-2{position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,0.12) 0%,transparent 70%);bottom:-100px;right:-100px;pointer-events:none;animation:drift2 15s ease-in-out infinite}
+.mesh-3{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,0.08) 0%,transparent 70%);top:40%;left:60%;pointer-events:none;animation:drift3 10s ease-in-out infinite}
+@keyframes drift1{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,20px)}}
+@keyframes drift2{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,30px)}}
+@keyframes drift3{0%,100%{transform:translate(0,0)}50%{transform:translate(15px,-25px)}}
 
-  <!-- SEO: Twitter / X Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Owaise Farooqui | Principal Software Engineer & AI Engineer" />
-  <meta name="twitter:description" content="8+ years building scalable web apps, AI SaaS, and cloud-native APIs. Creator of DocMind — an open-source RAG document intelligence platform." />
-  <meta name="twitter:image" content="https://farooqui-owais.github.io/portfolio/profile.jpeg" />
+.hero-inner{max-width:860px;width:100%;position:relative;z-index:2}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;background:rgba(124,109,250,0.1);border:1px solid rgba(124,109,250,0.25);border-radius:99px;padding:0.35rem 1rem 0.35rem 0.6rem;margin-bottom:2rem;animation:fadeUp 0.7s ease both}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--a3);animation:pulse 2s infinite}
+.eyebrow-txt{font-size:0.75rem;font-weight:600;color:var(--a1);letter-spacing:0.06em;text-transform:uppercase}
+@keyframes pulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(16,185,129,0.4)}50%{opacity:0.7;box-shadow:0 0 0 6px rgba(16,185,129,0)}}
 
-  <!-- Performance: Preload hero image -->
-  <link rel="preload" as="image" href="profile.jpeg" />
+.hero-h1{font-family:var(--font-display);font-size:clamp(3.2rem,8vw,6.5rem);font-weight:800;line-height:0.93;letter-spacing:-0.03em;margin-bottom:1.75rem;animation:fadeUp 0.7s 0.08s ease both}
+.hero-h1 .grad{background:linear-gradient(135deg,var(--a1) 0%,var(--a2) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-h1 .outline{-webkit-text-stroke:1.5px rgba(255,255,255,0.2);color:transparent}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+.hero-p{font-size:1.1rem;color:var(--muted);max-width:560px;line-height:1.8;margin-bottom:2.5rem;animation:fadeUp 0.7s 0.16s ease both}
+.hero-p strong{color:var(--text);font-weight:500}
 
-    :root {
-      --bg: #0a0a0f;
-      --surface: #111118;
-      --card: #16161f;
-      --border: #1f1f2e;
-      --accent: #6c63ff;
-      --accent2: #ff6584;
-      --accent3: #43e97b;
-      --text: #e8e8f0;
-      --muted: #7a7a9a;
-      --font-display: 'Syne', sans-serif;
-      --font-body: 'DM Sans', sans-serif;
-    }
+.hero-actions{display:flex;gap:0.75rem;flex-wrap:wrap;animation:fadeUp 0.7s 0.24s ease both;margin-bottom:4rem}
+.btn-primary{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.9rem;font-weight:600;color:#fff;background:var(--a1);padding:0.8rem 1.8rem;border-radius:99px;text-decoration:none;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 30px rgba(124,109,250,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(124,109,250,0.5)}
+.btn-ghost{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.9rem;font-weight:600;color:var(--text);background:rgba(255,255,255,0.05);border:1px solid var(--border-hi);padding:0.8rem 1.8rem;border-radius:99px;text-decoration:none;transition:border-color 0.2s,background 0.2s}
+.btn-ghost:hover{border-color:var(--a1);background:rgba(124,109,250,0.08)}
 
-    html { scroll-behavior: smooth; }
+.hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;animation:fadeUp 0.7s 0.32s ease both}
+.stat-cell{background:var(--s1);padding:1.5rem 1.25rem;text-align:center}
+.stat-num{font-family:var(--font-display);font-size:2rem;font-weight:800;letter-spacing:-0.03em;background:linear-gradient(135deg,var(--text),var(--muted));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-num em{color:var(--a1);font-style:normal;-webkit-text-fill-color:var(--a1)}
+.stat-lbl{font-size:0.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;font-weight:500}
 
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 
-    /* ── NOISE OVERLAY ── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 9999;
-      opacity: 0.6;
-    }
+/* ── SCROLL REVEAL ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:0.1s}.reveal-delay-2{transition-delay:0.2s}.reveal-delay-3{transition-delay:0.3s}
 
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1.2rem 4rem;
-      background: rgba(10,10,15,0.85);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border);
-    }
+/* ── SECTION CHROME ── */
+.section-wrap{max-width:1060px;margin:0 auto;padding:6rem 2.5rem;position:relative;z-index:1}
+.section-tag{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:var(--a1);margin-bottom:0.75rem}
+.section-tag::before{content:'//';opacity:0.5}
+.section-h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,2.8rem);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:0.75rem}
+.section-sub{font-size:1rem;color:var(--muted);max-width:480px;line-height:1.75;margin-bottom:3rem}
+.divider{border:none;border-top:1px solid var(--border);margin:0}
 
-    .nav-logo {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text);
-      text-decoration: none;
-    }
-    .nav-logo span { color: var(--accent); }
+/* ── MARQUEE ── */
+.marquee-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--s1);padding:0.9rem 0;position:relative;z-index:1}
+.marquee-track{display:flex;gap:2.5rem;width:max-content;animation:marquee 30s linear infinite}
+.marquee-item{display:flex;align-items:center;gap:0.6rem;font-size:0.78rem;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;white-space:nowrap}
+.marquee-item .dot{width:4px;height:4px;border-radius:50%;background:var(--a1);flex-shrink:0}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-    .nav-links a {
-      font-family: var(--font-display);
-      font-size: 0.85rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--text); }
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 340px;gap:3rem;align-items:start}
+.about-p{color:var(--muted);line-height:1.85;margin-bottom:1.1rem;font-size:0.98rem}
+.about-p strong{color:var(--text);font-weight:500}
+.info-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-xl);overflow:hidden}
+.info-row{display:flex;align-items:center;gap:1rem;padding:1rem 1.25rem;border-bottom:1px solid var(--border);transition:background 0.2s}
+.info-row:last-child{border-bottom:none}
+.info-row:hover{background:rgba(255,255,255,0.02)}
+.info-icon{width:34px;height:34px;border-radius:9px;background:rgba(124,109,250,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:0.85rem}
+.info-lbl{font-size:0.65rem;font-weight:600;color:var(--muted2);text-transform:uppercase;letter-spacing:0.1em}
+.info-val{font-size:0.88rem;color:var(--text);margin-top:1px}
+.info-val a{color:var(--a1);text-decoration:none}
+.info-val a:hover{text-decoration:underline}
 
-    .nav-cta {
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--bg);
-      background: var(--accent);
-      padding: 0.55rem 1.3rem;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: opacity 0.2s, transform 0.2s;
-    }
-    .nav-cta:hover { opacity: 0.85; transform: translateY(-1px); }
+/* ── SKILLS ── */
+#skills{background:var(--s1)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem}
+.skill-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem 1.5rem;transition:border-color 0.25s,transform 0.25s}
+.skill-card:hover{border-color:var(--border-hi);transform:translateY(-3px)}
+.skill-card.ai-card{border-color:rgba(16,185,129,0.2);background:linear-gradient(145deg,var(--card),rgba(16,185,129,0.04))}
+.skill-card.ai-card:hover{border-color:rgba(16,185,129,0.5)}
+.sk-head{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.9rem}
+.sk-icon{width:36px;height:36px;border-radius:9px;background:rgba(124,109,250,0.1);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.ai-card .sk-icon{background:rgba(16,185,129,0.1)}
+.sk-cat{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--a1)}
+.ai-card .sk-cat{color:var(--a3)}
+.sk-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.sk-tag{font-size:0.72rem;font-weight:500;color:var(--muted);background:rgba(255,255,255,0.04);border:1px solid var(--border);padding:0.2rem 0.65rem;border-radius:99px}
+.sk-tag.hi{color:var(--a1);background:rgba(124,109,250,0.08);border-color:rgba(124,109,250,0.2)}
+.sk-tag.ai{color:var(--a3);background:rgba(16,185,129,0.07);border-color:rgba(16,185,129,0.2)}
 
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 8rem 4rem 4rem;
-      overflow: hidden;
-    }
+/* ── DOCMIND FEATURE ── */
+.docmind-card{background:var(--card);border:1px solid rgba(16,185,129,0.25);border-radius:var(--radius-xl);padding:2.5rem;margin-bottom:3rem;position:relative;overflow:hidden}
+.docmind-card::before{content:'';position:absolute;top:-80px;right:-80px;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(16,185,129,0.1) 0%,transparent 70%);pointer-events:none}
+.docmind-card::after{content:'';position:absolute;bottom:-60px;left:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,0.08) 0%,transparent 70%);pointer-events:none}
+.dm-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1.25rem;position:relative;z-index:1}
+.dm-badge{display:inline-flex;align-items:center;gap:0.4rem;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--a3);background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.25);padding:0.3rem 0.75rem;border-radius:99px}
+.dm-live{display:inline-flex;align-items:center;gap:0.35rem;font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#fff;background:rgba(16,185,129,0.8);padding:0.3rem 0.75rem;border-radius:99px}
+.dm-live::before{content:'';width:6px;height:6px;border-radius:50%;background:#fff;animation:pulse 2s infinite}
+.dm-title{font-family:var(--font-display);font-size:1.8rem;font-weight:800;letter-spacing:-0.03em;margin-bottom:0.75rem;position:relative;z-index:1}
+.dm-desc{font-size:0.95rem;color:var(--muted);line-height:1.8;margin-bottom:1.5rem;max-width:680px;position:relative;z-index:1}
+.dm-features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.6rem;margin-bottom:1.5rem;position:relative;z-index:1}
+.dm-feat{display:flex;align-items:center;gap:0.5rem;font-size:0.83rem;color:var(--muted);padding:0.5rem 0.75rem;background:rgba(255,255,255,0.02);border:1px solid var(--border);border-radius:9px}
+.dm-feat::before{content:'→';color:var(--a3);font-size:0.75rem;flex-shrink:0}
+.dm-stack{display:flex;flex-wrap:wrap;gap:0.4rem;position:relative;z-index:1}
+.dm-tag{font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--a3);background:rgba(16,185,129,0.1);border:1px solid rgba(16,185,129,0.2);padding:0.25rem 0.65rem;border-radius:99px}
+.dm-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem;position:relative;z-index:1}
+.dm-metric{background:rgba(16,185,129,0.05);border:1px solid rgba(16,185,129,0.15);border-radius:12px;padding:1rem;text-align:center}
+.dm-metric-num{font-family:var(--font-display);font-size:1.5rem;font-weight:800;color:var(--a3);letter-spacing:-0.03em}
+.dm-metric-lbl{font-size:0.72rem;color:var(--muted);margin-top:0.25rem;text-transform:uppercase;letter-spacing:0.06em}
 
-    .hero-glow {
-      position: absolute;
-      width: 700px; height: 700px;
-      border-radius: 50%;
-      filter: blur(120px);
-      opacity: 0.18;
-      pointer-events: none;
-    }
-    .hero-glow-1 { background: var(--accent); top: -200px; left: -100px; }
-    .hero-glow-2 { background: var(--accent2); bottom: -200px; right: -100px; }
+/* ── EXPERIENCE ── */
+.exp-timeline{position:relative;padding-left:1.75rem}
+.exp-timeline::before{content:'';position:absolute;left:0;top:12px;bottom:12px;width:1px;background:linear-gradient(to bottom,var(--a1) 0%,rgba(124,109,250,0.1) 100%)}
+.exp-item{position:relative;margin-bottom:1.5rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;transition:border-color 0.25s}
+.exp-item:hover{border-color:var(--border-hi)}
+.exp-item.current{border-color:rgba(124,109,250,0.3);background:linear-gradient(145deg,var(--card) 80%,rgba(124,109,250,0.05))}
+.exp-item::before{content:'';position:absolute;left:-2rem;top:1.6rem;width:9px;height:9px;border-radius:50%;background:var(--a1);box-shadow:0 0 10px rgba(124,109,250,0.6);border:2px solid var(--bg)}
+.exp-top{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.25rem}
+.exp-co{font-family:var(--font-display);font-size:1rem;font-weight:800;letter-spacing:-0.01em}
+.exp-period{font-size:0.72rem;font-weight:600;color:var(--a1);background:rgba(124,109,250,0.1);border:1px solid rgba(124,109,250,0.2);padding:0.25rem 0.75rem;border-radius:99px}
+.exp-role{font-size:0.82rem;color:var(--muted);font-style:italic;margin-bottom:0.5rem}
+.exp-loc{font-size:0.72rem;color:var(--muted2);font-weight:600;text-transform:uppercase;letter-spacing:0.07em;margin-bottom:1rem}
+.exp-stack{display:flex;flex-wrap:wrap;gap:0.35rem;margin-bottom:0.9rem}
+.exp-stag{font-size:0.68rem;font-weight:600;color:var(--muted);background:rgba(255,255,255,0.03);border:1px solid var(--border);padding:0.15rem 0.55rem;border-radius:99px;letter-spacing:0.03em}
+.exp-bullets{list-style:none}
+.exp-bullets li{position:relative;padding-left:1.2rem;font-size:0.87rem;color:var(--muted);margin-bottom:0.5rem;line-height:1.65}
+.exp-bullets li::before{content:'→';position:absolute;left:0;color:var(--a1);font-size:0.78rem;top:0.05em}
+.exp-bullets li strong{color:var(--text);font-weight:500}
 
-    .hero-inner {
-      max-width: 900px;
-      position: relative;
-      z-index: 1;
-    }
+/* ── PROJECTS ── */
+#projects-section{background:var(--s1)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1rem;margin-top:1rem}
+.proj-card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.75rem;display:flex;flex-direction:column;gap:0.6rem;transition:border-color 0.25s,transform 0.25s}
+.proj-card:hover{border-color:var(--border-hi);transform:translateY(-4px)}
+.proj-num{font-size:0.68rem;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:0.12em}
+.proj-name{font-family:var(--font-display);font-size:1.1rem;font-weight:800;letter-spacing:-0.01em}
+.proj-desc{font-size:0.85rem;color:var(--muted);line-height:1.65;flex:1}
+.proj-stack{display:flex;flex-wrap:wrap;gap:0.35rem;margin-top:0.25rem}
+.proj-tag{font-size:0.68rem;font-weight:600;color:var(--a1);background:rgba(124,109,250,0.08);border:1px solid rgba(124,109,250,0.18);padding:0.18rem 0.55rem;border-radius:99px}
 
-    .hero-profile {
-      margin-bottom: 2rem;
-      animation: fadeUp 0.8s 0.05s ease both;
-    }
+/* ── CONTACT ── */
+.contact-section{text-align:center}
+.contact-section .section-sub{margin:0 auto 2.5rem}
+.contact-glow-wrap{position:relative;display:inline-block}
+.contact-email-btn{display:inline-flex;align-items:center;gap:0.6rem;font-size:1rem;font-weight:600;color:var(--bg);background:linear-gradient(135deg,var(--a1),var(--a2));padding:1rem 2.5rem;border-radius:99px;text-decoration:none;margin-bottom:3rem;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 0 40px rgba(124,109,250,0.3)}
+.contact-email-btn:hover{transform:translateY(-2px);box-shadow:0 0 60px rgba(124,109,250,0.5)}
+.contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.c-link{display:flex;align-items:center;gap:0.75rem;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1rem 1.5rem;text-decoration:none;color:var(--text);font-size:0.88rem;transition:border-color 0.2s,transform 0.2s,background 0.2s}
+.c-link:hover{border-color:var(--a1);background:rgba(124,109,250,0.05);transform:translateY(-2px)}
+.c-link svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;flex-shrink:0;color:var(--muted)}
+.c-link:hover svg{color:var(--a1)}
 
-    .hero-profile-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 32px;
-      object-fit: cover;
-      border: 2px solid var(--accent);
-      background: var(--surface);
-      box-shadow: 0 10px 30px rgba(108, 99, 255, 0.2);
-    }
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--border);text-align:center;padding:2rem 2.5rem;font-size:0.75rem;color:var(--muted2);display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1}
+footer a{color:var(--muted);text-decoration:none;transition:color 0.2s}
+footer a:hover{color:var(--a1)}
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-display);
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      border: 1px solid rgba(108,99,255,0.35);
-      padding: 0.4rem 1rem;
-      border-radius: 999px;
-      margin-bottom: 2rem;
-      animation: fadeUp 0.8s ease both;
-    }
-    .hero-badge::before {
-      content: '';
-      width: 6px; height: 6px;
-      border-radius: 50%;
-      background: var(--accent3);
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.5; transform: scale(0.7); }
-    }
-
-    .hero-name {
-      font-family: var(--font-display);
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      font-weight: 800;
-      line-height: 0.95;
-      letter-spacing: -0.03em;
-      margin-bottom: 1.5rem;
-      animation: fadeUp 0.8s 0.1s ease both;
-    }
-    .hero-name .accent { color: var(--accent); }
-    .hero-name .line2 {
-      display: block;
-      -webkit-text-stroke: 1.5px rgba(108,99,255,0.5);
-      color: transparent;
-    }
-
-    .hero-desc {
-      font-size: 1.15rem;
-      color: var(--muted);
-      max-width: 560px;
-      line-height: 1.75;
-      margin-bottom: 2.5rem;
-      animation: fadeUp 0.8s 0.2s ease both;
-    }
-    .hero-desc strong { color: var(--text); font-weight: 500; }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      animation: fadeUp 0.8s 0.3s ease both;
-    }
-
-    .btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-display);
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #fff;
-      background: var(--accent);
-      padding: 0.9rem 2rem;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 0 30px rgba(108,99,255,0.35);
-    }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(108,99,255,0.5); }
-
-    .btn-ghost {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: var(--font-display);
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text);
-      background: transparent;
-      border: 1px solid var(--border);
-      padding: 0.9rem 2rem;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
-
-    .hero-stats {
-      display: flex;
-      gap: 3rem;
-      margin-top: 4rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--border);
-      animation: fadeUp 0.8s 0.4s ease both;
-    }
-    .stat-item {}
-    .stat-num {
-      font-family: var(--font-display);
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.03em;
-    }
-    .stat-num span { color: var(--accent); }
-    .stat-label {
-      font-size: 0.8rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      margin-top: 0.25rem;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* ── SECTIONS ── */
-    section {
-      padding: 6rem 4rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-tag {
-      font-family: var(--font-display);
-      font-size: 0.72rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
-    }
-
-    .section-title {
-      font-family: var(--font-display);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
-
-    .section-sub {
-      color: var(--muted);
-      font-size: 1.05rem;
-      max-width: 500px;
-      line-height: 1.7;
-      margin-bottom: 3.5rem;
-    }
-
-    /* ── ABOUT ── */
-    #about { border-top: 1px solid var(--border); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4rem;
-      align-items: start;
-    }
-
-    .about-text p {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-bottom: 1.2rem;
-      font-size: 1.02rem;
-    }
-    .about-text p strong { color: var(--text); font-weight: 500; }
-
-    .about-contact-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2rem;
-    }
-    .contact-row {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.9rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .contact-row:last-child { border-bottom: none; }
-    .contact-icon {
-      width: 38px; height: 38px;
-      border-radius: 10px;
-      background: rgba(108,99,255,0.12);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem;
-      flex-shrink: 0;
-    }
-    
-    .contact-label {
-      font-size: 0.7rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      font-family: var(--font-display);
-      font-weight: 700;
-    }
-    .contact-value {
-      font-size: 0.92rem;
-      color: var(--text);
-    }
-    .contact-value a { color: var(--accent); text-decoration: none; }
-    .contact-value a:hover { text-decoration: underline; }
-
-    /* ── SKILLS ── */
-    #skills { border-top: 1px solid var(--border); }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-      gap: 1.25rem;
-    }
-
-    .skill-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.5rem;
-      transition: border-color 0.25s, transform 0.25s;
-    }
-    .skill-card:hover { border-color: var(--accent); transform: translateY(-3px); }
-
-    .skill-card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-    .skill-icon {
-      font-size: 1.4rem;
-      width: 42px; height: 42px;
-      display: flex; align-items: center; justify-content: center;
-      border-radius: 10px;
-      background: rgba(108,99,255,0.1);
-    }
-    .skill-cat {
-      font-family: var(--font-display);
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-    }
-    .skill-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .tag {
-      font-size: 0.78rem;
-      color: var(--muted);
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      padding: 0.25rem 0.7rem;
-      border-radius: 999px;
-      font-family: var(--font-display);
-      font-weight: 600;
-    }
-
-    .skill-card--ai {
-      border-color: rgba(67, 233, 123, 0.25);
-      background: linear-gradient(135deg, var(--card) 70%, rgba(67,233,123,0.05));
-    }
-    .skill-card--ai:hover { border-color: var(--accent3); }
-    .skill-card--ai .skill-cat { color: var(--accent3); }
-    .skill-card--ai .skill-icon { background: rgba(67,233,123,0.1); }
-    .tag--ai {
-      color: var(--accent3);
-      background: rgba(67,233,123,0.08);
-      border-color: rgba(67,233,123,0.25);
-    }
-
-    /* ── EXPERIENCE ── */
-    #experience { border-top: 1px solid var(--border); }
-
-    .exp-timeline {
-      position: relative;
-      padding-left: 2rem;
-    }
-    .exp-timeline::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 1px;
-      background: linear-gradient(to bottom, var(--accent), transparent);
-    }
-
-    .exp-item {
-      position: relative;
-      margin-bottom: 2.5rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2rem;
-      transition: border-color 0.25s;
-    }
-    .exp-item:hover { border-color: var(--accent); }
-    .exp-item--current {
-      border-color: rgba(108,99,255,0.4);
-      background: linear-gradient(135deg, var(--card) 80%, rgba(108,99,255,0.06));
-    }
-
-    .exp-item::before {
-      content: '';
-      position: absolute;
-      left: -2.45rem;
-      top: 2rem;
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 12px var(--accent);
-    }
-
-    .exp-top {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .exp-company {
-      font-family: var(--font-display);
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--text);
-    }
-    .exp-period {
-      font-size: 0.78rem;
-      font-family: var(--font-display);
-      font-weight: 600;
-      color: var(--accent);
-      background: rgba(108,99,255,0.12);
-      padding: 0.3rem 0.8rem;
-      border-radius: 999px;
-    }
-    .exp-title {
-      font-size: 0.88rem;
-      color: var(--muted);
-      font-weight: 500;
-      margin-bottom: 1rem;
-      font-style: italic;
-    }
-    .exp-location {
-      font-size: 0.78rem;
-      color: var(--muted);
-      font-family: var(--font-display);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 1rem;
-    }
-
-    .exp-bullets {
-      list-style: none;
-    }
-    .exp-bullets li {
-      position: relative;
-      padding-left: 1.2rem;
-      font-size: 0.92rem;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-      line-height: 1.6;
-    }
-    .exp-bullets li::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-      font-size: 0.8rem;
-    }
-
-    /* ── PROJECTS ── */
-    #projects { border-top: 1px solid var(--border); }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .project-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      transition: border-color 0.25s, transform 0.25s;
-    }
-    .project-card:hover { border-color: var(--accent); transform: translateY(-4px); }
-
-    .project-number {
-      font-family: var(--font-display);
-      font-size: 0.7rem;
-      font-weight: 800;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-    }
-    .project-name {
-      font-family: var(--font-display);
-      font-size: 1.2rem;
-      font-weight: 800;
-      color: var(--text);
-      letter-spacing: -0.02em;
-    }
-    .project-desc {
-      font-size: 0.88rem;
-      color: var(--muted);
-      line-height: 1.65;
-      flex: 1;
-    }
-    .project-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      margin-top: 0.5rem;
-    }
-    .stack-tag {
-      font-size: 0.72rem;
-      font-family: var(--font-display);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent);
-      background: rgba(108,99,255,0.1);
-      border: 1px solid rgba(108,99,255,0.2);
-      padding: 0.2rem 0.6rem;
-      border-radius: 999px;
-    }
-
-    .project-card--featured {
-      grid-column: 1 / -1;
-      border-color: rgba(67,233,123,0.3);
-      background: linear-gradient(135deg, var(--card) 60%, rgba(67,233,123,0.06));
-      position: relative;
-      overflow: hidden;
-    }
-    .project-card--featured::after {
-      content: '';
-      position: absolute;
-      top: -60px; right: -60px;
-      width: 200px; height: 200px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(67,233,123,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .project-card--featured:hover { border-color: var(--accent3); }
-    .project-number--featured {
-      color: var(--accent3) !important;
-      border-color: rgba(67,233,123,0.3) !important;
-    }
-    .stack-tag--featured {
-      color: var(--accent3) !important;
-      background: rgba(67,233,123,0.1) !important;
-      border-color: rgba(67,233,123,0.25) !important;
-    }
-
-    /* ── CONTACT ── */
-    #contact {
-      border-top: 1px solid var(--border);
-      text-align: center;
-    }
-    #contact .section-title { margin-bottom: 0.5rem; }
-    #contact .section-sub { max-width: 420px; margin: 0 auto 2.5rem; }
-
-    .contact-grid {
-      display: flex;
-      gap: 1.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 3rem;
-    }
-    .contact-pill {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 1.2rem 1.8rem;
-      text-decoration: none;
-      color: var(--text);
-      transition: border-color 0.2s, transform 0.2s;
-      font-size: 0.92rem;
-    }
-    .contact-pill:hover { border-color: var(--accent); transform: translateY(-2px); color: var(--accent); }
-    .contact-pill-icon { font-size: 1.3rem; }
-
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 2.5rem 4rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-family: var(--font-display);
-      font-weight: 600;
-      letter-spacing: 0.04em;
-    }
-    footer span { color: var(--accent); }
-
-    /* ── MOBILE ── */
-    @media (max-width: 768px) {
-      nav { padding: 1rem 1.5rem; }
-      .nav-links { display: none; }
-      #hero { padding: 7rem 1.5rem 3rem; }
-      section { padding: 4rem 1.5rem; }
-      .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-stats { gap: 2rem; flex-wrap: wrap; }
-      footer { padding: 2rem 1.5rem; }
-    }
-  </style>
-
-  <!-- SEO: JSON-LD Structured Data (Person schema) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Owaise Farooqui",
-    "jobTitle": "Principal Software Engineer",
-    "description": "Principal Software Engineer with 8+ years of experience in Python, Django, FastAPI, AWS, Magento 2, PHP, Laravel, ReactJS, Docker, RAG, and AI-assisted development. Creator of DocMind, a multi-tenant RAG document intelligence SaaS.",
-    "url": "https://farooqui-owais.github.io/portfolio/",
-    "image": "https://farooqui-owais.github.io/portfolio/profile.jpeg",
-    "email": "owais.khalilahmed@gmail.com",
-    "telephone": "+91-8806006301",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Pune",
-      "addressRegion": "Maharashtra",
-      "addressCountry": "IN"
-    },
-    "alumniOf": {
-      "@type": "CollegeOrUniversity",
-      "name": "Pune University"
-    },
-    "knowsAbout": ["Python", "Django", "AWS", "Magento 2", "PHP", "Node.js", "ReactJS", "Docker", "CI/CD", "MySQL", "PostgreSQL", "REST APIs"],
-    "sameAs": [
-      "https://www.linkedin.com/in/owaise-farooqui"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Accion Labs Pvt Ltd"
-    }
-  }
-  </script>
+/* ── MOBILE ── */
+@media(max-width:900px){
+  .about-grid{grid-template-columns:1fr}
+  .dm-metrics{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:700px){
+  nav{padding:0 1.25rem}
+  .nav-links{display:none}
+  .section-wrap{padding:4rem 1.25rem}
+  #hero{padding:6rem 1.25rem 3rem}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .dm-metrics{grid-template-columns:1fr 1fr}
+  .dm-header{flex-direction:column;gap:0.5rem}
+  footer{flex-direction:column;gap:0.5rem}
+  .nav-burger{display:flex}
+}
+@media(max-width:420px){
+  .hero-stats{grid-template-columns:1fr 1fr}
+  .dm-metrics{grid-template-columns:1fr}
+}
+</style>
 </head>
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#hero" class="nav-logo">OF<span>.</span></a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <a href="mailto:owais.khalilahmed@gmail.com" class="nav-cta">Hire Me</a>
-  </nav>
+<!-- ── NAV ── -->
+<nav>
+  <a href="#hero" class="nav-logo">OF<em>.</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Stack</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects-section">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <a href="https://github.com/farooqui-owais" target="_blank" rel="noopener noreferrer" class="nav-gh" aria-label="GitHub profile">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+      GitHub
+    </a>
+    <a href="mailto:owaisfarooqui.dev@gmail.com" class="nav-cta">Hire Me</a>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-glow hero-glow-1"></div>
-    <div class="hero-glow hero-glow-2"></div>
-    <div class="hero-inner">
-      <div class="hero-profile">
-        <img src="profile.jpeg" alt="Owaise Farooqui, Senior Software Engineer based in Pune, Maharashtra" class="hero-profile-img" width="120" height="120" />
-        <img src="profile.jpeg" alt="Owaise Farooqui, Senior Software Engineer based in Pune, Maharashtra" class="hero-profile-img" width="120" height="120" />
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="mesh-1"></div>
+  <div class="mesh-2"></div>
+  <div class="mesh-3"></div>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <span class="eyebrow-dot"></span>
+      <span class="eyebrow-txt">Available for Senior IC Roles · Remote-First</span>
+    </div>
+    <h1 class="hero-h1">
+      <span class="grad">Owaise</span><br>
+      <span class="outline">Farooqui</span>
+    </h1>
+    <p class="hero-p">
+      <strong>Principal Software Engineer</strong> with 10+ years architecting production-grade full-stack and AI-powered systems. Creator of <strong>DocMind</strong> — a multi-tenant RAG Document Intelligence SaaS built solo. Specialist in FastAPI, TypeScript, Node.js, pgvector, and cloud-native microservices.
+    </p>
+    <div class="hero-actions">
+      <a href="#experience" class="btn-primary">View My Work ↓</a>
+      <a href="https://github.com/farooqui-owais" target="_blank" rel="noopener noreferrer" class="btn-ghost">GitHub ↗</a>
+      <a href="#contact" class="btn-ghost">Get In Touch</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-cell">
+        <div class="stat-num">10<em>+</em></div>
+        <div class="stat-lbl">Years Experience</div>
       </div>
-      <div class="hero-badge">Principal Engineer · AI Builder · Open Source Creator</div>
-      <h1 class="hero-name">
-        Owaise<br>
-        <span class="line2">Farooqui</span>
-      </h1>
-      <p class="hero-desc">
-        <strong>Principal Software Engineer</strong> with 8+ years of experience building
-        scalable web applications, AI-powered SaaS, and cloud-native APIs across Python,
-        Django, FastAPI, AWS, Magento 2, and React — powered by AI-assisted workflows.
-      </p>
-      <div class="hero-actions">
-        <a href="#experience" class="btn-primary">View My Work ↓</a>
-        <a href="https://forms.gle/aPzW7gr3NC3Jqs6e7" target="_blank" rel="noopener noreferrer" class="btn-ghost">Get In Touch</a>
-        <a href="https://forms.gle/aPzW7gr3NC3Jqs6e7" target="_blank" rel="noopener noreferrer" class="btn-ghost">Get In Touch</a>
+      <div class="stat-cell">
+        <div class="stat-num">35<em>%</em></div>
+        <div class="stat-lbl">API Latency Cut</div>
       </div>
-      <div class="hero-stats">
-        <div class="stat-item">
-          <div class="stat-num">8<span>+</span></div>
-          <div class="stat-label">Years Experience</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">10<span>+</span></div>
-          <div class="stat-label">Key Projects</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">99<span>.95%</span></div>
-          <div class="stat-label">Uptime Maintained</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-num">4<span>×</span></div>
-          <div class="stat-label">AI Tools in Daily Use</div>
-        </div>
+      <div class="stat-cell">
+        <div class="stat-num">99<em>.95%</em></div>
+        <div class="stat-lbl">Uptime Maintained</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-num">75<em>%</em></div>
+        <div class="stat-lbl">Test Coverage Raised</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-tag">// About Me</div>
-    <h2 class="section-title">Who I Am</h2>
+<!-- ── MARQUEE ── -->
+<div class="marquee-wrap">
+  <div class="marquee-track" aria-hidden="true">
+    <span class="marquee-item"><span class="dot"></span>Python</span>
+    <span class="marquee-item"><span class="dot"></span>FastAPI</span>
+    <span class="marquee-item"><span class="dot"></span>TypeScript</span>
+    <span class="marquee-item"><span class="dot"></span>Node.js</span>
+    <span class="marquee-item"><span class="dot"></span>React.js</span>
+    <span class="marquee-item"><span class="dot"></span>RAG Pipelines</span>
+    <span class="marquee-item"><span class="dot"></span>pgvector</span>
+    <span class="marquee-item"><span class="dot"></span>ChromaDB</span>
+    <span class="marquee-item"><span class="dot"></span>PostgreSQL</span>
+    <span class="marquee-item"><span class="dot"></span>Redis</span>
+    <span class="marquee-item"><span class="dot"></span>Celery</span>
+    <span class="marquee-item"><span class="dot"></span>Docker</span>
+    <span class="marquee-item"><span class="dot"></span>Kubernetes</span>
+    <span class="marquee-item"><span class="dot"></span>AWS</span>
+    <span class="marquee-item"><span class="dot"></span>Jest</span>
+    <span class="marquee-item"><span class="dot"></span>Pytest</span>
+    <span class="marquee-item"><span class="dot"></span>Microservices</span>
+    <span class="marquee-item"><span class="dot"></span>Magento 2</span>
+    <!-- repeat for seamless loop -->
+    <span class="marquee-item"><span class="dot"></span>Python</span>
+    <span class="marquee-item"><span class="dot"></span>FastAPI</span>
+    <span class="marquee-item"><span class="dot"></span>TypeScript</span>
+    <span class="marquee-item"><span class="dot"></span>Node.js</span>
+    <span class="marquee-item"><span class="dot"></span>React.js</span>
+    <span class="marquee-item"><span class="dot"></span>RAG Pipelines</span>
+    <span class="marquee-item"><span class="dot"></span>pgvector</span>
+    <span class="marquee-item"><span class="dot"></span>ChromaDB</span>
+    <span class="marquee-item"><span class="dot"></span>PostgreSQL</span>
+    <span class="marquee-item"><span class="dot"></span>Redis</span>
+    <span class="marquee-item"><span class="dot"></span>Celery</span>
+    <span class="marquee-item"><span class="dot"></span>Docker</span>
+    <span class="marquee-item"><span class="dot"></span>Kubernetes</span>
+    <span class="marquee-item"><span class="dot"></span>AWS</span>
+    <span class="marquee-item"><span class="dot"></span>Jest</span>
+    <span class="marquee-item"><span class="dot"></span>Pytest</span>
+    <span class="marquee-item"><span class="dot"></span>Microservices</span>
+    <span class="marquee-item"><span class="dot"></span>Magento 2</span>
+  </div>
+</div>
+
+<!-- ── ABOUT ── -->
+<section id="about">
+  <div class="section-wrap">
+    <div class="section-tag">About</div>
+    <h2 class="section-h2 reveal">Who I Am</h2>
     <div class="about-grid">
-      <div class="about-text">
-        <p>
-          I'm a <strong>Principal Software Engineer</strong> with 8+ years of experience turning complex business problems into clean, scalable software. My career spans the full stack — from Magento 2 storefronts handling thousands of daily transactions to AI-powered SaaS platforms built with FastAPI, RAG pipelines, and vector databases.
-        </p>
-        <p>
-          Today I work at the intersection of <strong>backend engineering and applied AI</strong>. I'm the creator of <strong>DocMind</strong>, a multi-tenant document intelligence platform built on FastAPI, PostgreSQL, ChromaDB, pgvector, Ollama, and Celery — giving teams conversational access to their knowledge base through retrieval-augmented generation.
-        </p>
-        <p>
-          I integrate AI development tools — <strong>GitHub Copilot, Claude Code, ChatGPT, and Cursor AI</strong> — into my daily engineering workflow as genuine productivity multipliers. I believe engineers who pair deep technical mastery with AI-assisted velocity are the ones who ship more, faster, and better.
-        </p>
-        <p>
-          Holding an <strong>MCA from Pune University</strong> and certifications in Web Technologies (C-DAC) and Cloud &amp; DevOps (Learnbay, 2024), I stay at the edge — fine-tuning RAG evaluation harnesses, designing microservices, or deep-diving system architecture at scale.
-        </p>
+      <div class="about-text reveal reveal-delay-1">
+        <p class="about-p">I'm a <strong>Principal Software Engineer</strong> with 10+ years turning complex business problems into clean, scalable software. My career spans the full stack — from Magento 2 storefronts handling thousands of daily transactions to AI-powered SaaS platforms built with <strong>FastAPI, RAG pipelines, and vector databases</strong>.</p>
+        <p class="about-p">Today I work at the intersection of <strong>backend engineering and applied AI</strong>. I'm the solo creator of <strong>DocMind</strong>, a production-grade multi-tenant document intelligence platform built on FastAPI, PostgreSQL, ChromaDB, pgvector, and Celery — giving teams conversational access to their knowledge base through retrieval-augmented generation, with full tenant isolation via PostgreSQL Row-Level Security.</p>
+        <p class="about-p">At Accion Labs I lead <strong>Node.js, Python, and TypeScript microservices</strong> in production — cutting API latency by 35%, raising test coverage from 20% to 75%, and owning features from whiteboard to post-release monitoring. I pair deep technical mastery with <strong>AI-assisted velocity</strong> (GitHub Copilot, Claude Code, Cursor AI) to ship more, faster, and better.</p>
+        <p class="about-p">Holding an <strong>MCA from Pune University</strong> and a Cloud &amp; DevOps certification (Learnbay, 2025), I stay at the edge — designing microservice architectures, fine-tuning RAG evaluation harnesses, and mentoring engineers on system design at scale.</p>
       </div>
-      <div class="about-contact-card">
-        <div class="contact-row">
-          <div class="contact-icon">📍</div>
-          <div class="contact-info">
-            <div class="contact-label">Location</div>
-            <div class="contact-value">Pune, Maharashtra, India</div>
-          </div>
+      <div class="info-card reveal reveal-delay-2">
+        <div class="info-row">
+          <div class="info-icon">📍</div>
+          <div><div class="info-lbl">Location</div><div class="info-val">Pune, Maharashtra, India</div></div>
         </div>
-        <div class="contact-row">
-          <div class="contact-icon">📱</div>
-          <div class="contact-info">
-            <div class="contact-label">Mobile</div>
-            <div class="contact-value">+91 8806006301</div>
-          </div>
+        <div class="info-row">
+          <div class="info-icon">✉️</div>
+          <div><div class="info-lbl">Email</div><div class="info-val"><a href="mailto:owaisfarooqui.dev@gmail.com">owaisfarooqui.dev@gmail.com</a></div></div>
         </div>
-        <div class="contact-row">
-          <div class="contact-icon">✉️</div>
-          <div class="contact-info">
-            <div class="contact-label">Email</div>
-            <div class="contact-value"><a href="mailto:owais.khalilahmed@gmail.com">owais.khalilahmed@gmail.com</a></div>
-          </div>
+        <div class="info-row">
+          <div class="info-icon">📱</div>
+          <div><div class="info-lbl">Mobile</div><div class="info-val">+91 8806006301</div></div>
         </div>
-        <div class="contact-row">
-          <div class="contact-icon">💼</div>
-          <div class="contact-info">
-            <div class="contact-label">LinkedIn</div>
-            <div class="contact-value"><a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank" rel="noopener noreferrer">owaise-farooqui</a></div>
-            <div class="contact-value"><a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank" rel="noopener noreferrer">owaise-farooqui</a></div>
-          </div>
+        <div class="info-row">
+          <div class="info-icon">💼</div>
+          <div><div class="info-lbl">LinkedIn</div><div class="info-val"><a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank" rel="noopener noreferrer">owaise-farooqui ↗</a></div></div>
         </div>
-        <div class="contact-row">
-          <div class="contact-icon">🎓</div>
-          <div class="contact-info">
-            <div class="contact-label">Education</div>
-            <div class="contact-value">MCA — Pune University, 2012</div>
-          </div>
+        <div class="info-row">
+          <div class="info-icon">⌨️</div>
+          <div><div class="info-lbl">GitHub</div><div class="info-val"><a href="https://github.com/farooqui-owais" target="_blank" rel="noopener noreferrer">farooqui-owais ↗</a></div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🎓</div>
+          <div><div class="info-lbl">Education</div><div class="info-val">MCA — Pune University, 2012</div></div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon">🏆</div>
+          <div><div class="info-lbl">Certification</div><div class="info-val">Cloud &amp; DevOps — Learnbay, 2025</div></div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-tag">// Skills</div>
-    <h2 class="section-title">Tech Stack</h2>
-    <p class="section-sub">Tools and technologies I work with to bring ideas to life.</p>
+<!-- ── SKILLS ── -->
+<section id="skills">
+  <div class="section-wrap">
+    <div class="section-tag">Stack</div>
+    <h2 class="section-h2 reveal">Tech I Work With</h2>
+    <p class="section-sub reveal reveal-delay-1">Production-proven across backend, frontend, AI/ML, cloud, and observability.</p>
     <div class="skills-grid">
-      <div class="skill-card">
-        <div class="skill-card-header">
-          <div class="skill-icon">🎨</div>
-          <div class="skill-cat">Frontend Technologies</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag">HTML5</span>
-          <span class="tag">CSS3</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">ReactJS</span>
-          <span class="tag">Bootstrap</span>
+      <div class="skill-card reveal">
+        <div class="sk-head"><div class="sk-icon">⚙️</div><div class="sk-cat">Backend</div></div>
+        <div class="sk-tags">
+          <span class="sk-tag hi">Python</span><span class="sk-tag hi">FastAPI</span><span class="sk-tag hi">Node.js</span>
+          <span class="sk-tag">Django</span><span class="sk-tag">PHP</span><span class="sk-tag">Laravel</span><span class="sk-tag">CodeIgniter</span>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-card-header">
-          <div class="skill-icon">⚙️</div>
-          <div class="skill-cat">Backend Technologies</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag">Python</span>
-          <span class="tag">PHP</span>
-          <span class="tag">Node.js</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">Laravel</span>
-          <span class="tag">Django</span>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="sk-head"><div class="sk-icon">🎨</div><div class="sk-cat">Frontend</div></div>
+        <div class="sk-tags">
+          <span class="sk-tag hi">TypeScript</span><span class="sk-tag hi">React.js</span>
+          <span class="sk-tag">JavaScript</span><span class="sk-tag">HTML5</span><span class="sk-tag">CSS3</span><span class="sk-tag">Bootstrap</span>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-card-header">
-          <div class="skill-icon">🛒</div>
-          <div class="skill-cat">CMS & Frameworks</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag">Magento 2</span>
-          <span class="tag">WordPress</span>
-          <span class="tag">Django</span>
-          <span class="tag">CodeIgniter</span>
+      <div class="skill-card ai-card reveal reveal-delay-2">
+        <div class="sk-head"><div class="sk-icon">🧠</div><div class="sk-cat">AI / ML Engineering</div></div>
+        <div class="sk-tags">
+          <span class="sk-tag ai">RAG Pipelines</span><span class="sk-tag ai">LLM APIs</span><span class="sk-tag ai">pgvector</span>
+          <span class="sk-tag ai">ChromaDB</span><span class="sk-tag ai">LangChain</span><span class="sk-tag ai">Ollama</span><span class="sk-tag ai">Celery</span>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-card-header">
-          <div class="skill-icon">☁️</div>
-          <div class="skill-cat">Cloud & DevOps</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag">AWS</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Git</span>
-          <span class="tag">CI/CD</span>
+      <div class="skill-card reveal">
+        <div class="sk-head"><div class="sk-icon">🗄️</div><div class="sk-cat">Databases</div></div>
+        <div class="sk-tags">
+          <span class="sk-tag hi">PostgreSQL</span><span class="sk-tag hi">Redis</span><span class="sk-tag">MySQL</span>
+          <span class="sk-tag">MongoDB</span><span class="sk-tag">async SQLAlchemy</span>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-card-header">
-          <div class="skill-icon">🗄️</div>
-          <div class="skill-cat">Databases & Stores</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag">MySQL</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">ChromaDB</span>
-          <span class="tag">pgvector</span>
-          <span class="tag">Redis</span>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="sk-head"><div class="sk-icon">☁️</div><div class="sk-cat">DevOps / Cloud</div></div>
+        <div class="sk-tags">
+          <span class="sk-tag hi">Docker</span><span class="sk-tag hi">Kubernetes</span><span class="sk-tag hi">AWS</span>
+          <span class="sk-tag">CI/CD</span><span class="sk-tag">GitHub Actions</span><span class="sk-tag">Jenkins</span>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-card-header">
-          <div class="skill-icon">🏗️</div>
-          <div class="skill-cat">Architecture</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag">REST APIs</span>
-          <span class="tag">Microservices</span>
-          <span class="tag">RAG Pipelines</span>
-          <span class="tag">Agile / Scrum</span>
-          <span class="tag">Code Review</span>
+      <div class="skill-card reveal reveal-delay-2">
+        <div class="sk-head"><div class="sk-icon">📡</div><div class="sk-cat">Observability & Testing</div></div>
+        <div class="sk-tags">
+          <span class="sk-tag hi">CloudWatch</span><span class="sk-tag hi">Sentry</span>
+          <span class="sk-tag">Jest</span><span class="sk-tag">Pytest</span><span class="sk-tag">Postman / Newman</span>
         </div>
       </div>
-      <div class="skill-card skill-card--ai">
-        <div class="skill-card-header">
-          <div class="skill-icon">🤖</div>
-          <div class="skill-cat">AI Dev Tools</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag tag--ai">GitHub Copilot</span>
-          <span class="tag tag--ai">Claude Code</span>
-          <span class="tag tag--ai">ChatGPT</span>
-          <span class="tag tag--ai">Cursor AI</span>
+      <div class="skill-card reveal">
+        <div class="sk-head"><div class="sk-icon">🏗️</div><div class="sk-cat">Architecture</div></div>
+        <div class="sk-tags">
+          <span class="sk-tag hi">Microservices</span><span class="sk-tag hi">REST APIs</span>
+          <span class="sk-tag">Multi-tenancy</span><span class="sk-tag">Agile / Scrum</span><span class="sk-tag">Code Review</span>
         </div>
       </div>
-      <div class="skill-card">
-        <div class="skill-card-header">
-          <div class="skill-icon">🧠</div>
-          <div class="skill-cat">AI / ML Engineering</div>
-        </div>
-        <div class="skill-tags">
-          <span class="tag">FastAPI</span>
-          <span class="tag">LangChain</span>
-          <span class="tag">ChromaDB</span>
-          <span class="tag">pgvector</span>
-          <span class="tag">Ollama</span>
-          <span class="tag">Sentence Transformers</span>
-          <span class="tag">Celery</span>
+      <div class="skill-card reveal reveal-delay-1">
+        <div class="sk-head"><div class="sk-icon">🛒</div><div class="sk-cat">E-Commerce / CMS</div></div>
+        <div class="sk-tags">
+          <span class="sk-tag">Magento 2</span><span class="sk-tag">WordPress</span><span class="sk-tag">Odoo Integration</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="section-tag">// Experience</div>
-    <h2 class="section-title">Work History</h2>
-    <p class="section-sub">8+ years building products across e-commerce, healthcare, SaaS and more.</p>
+<!-- ── EXPERIENCE ── -->
+<section id="experience">
+  <div class="section-wrap">
+    <div class="section-tag">Experience</div>
+    <h2 class="section-h2 reveal">Work History</h2>
+    <p class="section-sub reveal reveal-delay-1">10+ years building products across AI SaaS, e-commerce, healthcare, and cloud platforms.</p>
+
+    <!-- DOCMIND — FLAGSHIP PROJECT AT TOP -->
+    <div class="docmind-card reveal">
+      <div class="dm-header">
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center">
+          <span class="dm-badge">★ Flagship Project · Solo Build</span>
+          <span class="dm-live">Live</span>
+        </div>
+        <span style="font-size:0.75rem;color:var(--muted2);font-weight:500">2024 – Present · Remote</span>
+      </div>
+      <div class="dm-title">DocMind — RAG Document Intelligence SaaS</div>
+      <p class="dm-desc">Production-grade multi-tenant SaaS enabling organisations to upload, index, and query documents using AI-powered retrieval-augmented generation. Built solo across 5 structured milestones with full end-to-end ownership and no external engineering support.</p>
+      <div class="dm-features">
+        <div class="dm-feat">Multi-tenant auth with PostgreSQL RLS tenant isolation</div>
+        <div class="dm-feat">Dual vector store — pgvector + ChromaDB routing</div>
+        <div class="dm-feat">Celery + Redis async ingestion pipeline</div>
+        <div class="dm-feat">Ollama local LLM + OpenAI fallback</div>
+        <div class="dm-feat">Per-tenant LLM token metering &amp; billing primitives</div>
+        <div class="dm-feat">Docker Compose — one-command dev to prod parity</div>
+      </div>
+      <div class="dm-stack">
+        <span class="dm-tag">Python</span><span class="dm-tag">FastAPI</span><span class="dm-tag">PostgreSQL</span>
+        <span class="dm-tag">pgvector</span><span class="dm-tag">ChromaDB</span><span class="dm-tag">Redis</span>
+        <span class="dm-tag">Celery</span><span class="dm-tag">Docker</span><span class="dm-tag">JWT</span>
+        <span class="dm-tag">RAG</span><span class="dm-tag">async SQLAlchemy</span>
+      </div>
+      <div class="dm-metrics">
+        <div class="dm-metric"><div class="dm-metric-num">&lt;500ms</div><div class="dm-metric-lbl">Semantic search</div></div>
+        <div class="dm-metric"><div class="dm-metric-num">5</div><div class="dm-metric-lbl">Milestones delivered</div></div>
+        <div class="dm-metric"><div class="dm-metric-num">&lt;2 min</div><div class="dm-metric-lbl">Local stack setup</div></div>
+      </div>
+    </div>
+
+    <!-- TIMELINE -->
     <div class="exp-timeline">
 
-      <div class="exp-item exp-item--current">
+      <div class="exp-item current reveal">
         <div class="exp-top">
-          <div class="exp-company">Accion Labs Pvt Ltd</div>
-          <div class="exp-period">May 2022 – Present</div>
+          <div class="exp-co">Accion Labs Pvt. Ltd.</div>
+          <span class="exp-period">May 2022 – Present</span>
         </div>
-        <div class="exp-title">Principal Software Engineer</div>
-        <div class="exp-location">📍 Pune, Maharashtra</div>
+        <div class="exp-role">Principal Software Engineer</div>
+        <div class="exp-loc">📍 Pune, Maharashtra</div>
+        <div class="exp-stack">
+          <span class="exp-stag">Node.js</span><span class="exp-stag">Python</span><span class="exp-stag">TypeScript</span>
+          <span class="exp-stag">React.js</span><span class="exp-stag">Microservices</span><span class="exp-stag">MySQL</span>
+          <span class="exp-stag">Docker</span><span class="exp-stag">Kubernetes</span><span class="exp-stag">AWS</span>
+          <span class="exp-stag">Redis</span><span class="exp-stag">Pytest</span>
+          <span class="exp-stag">CloudWatch</span><span class="exp-stag">Sentry</span><span class="exp-stag">CI/CD</span>
+        </div>
         <ul class="exp-bullets">
-          <li>Leveraged AI-assisted development tools including <strong style="color:var(--accent3)">GitHub Copilot, ChatGPT, Claude Code, and Cursor AI</strong> to accelerate feature delivery, automate code generation, and improve overall developer productivity.</li>
-          <li>Led cross-functional engineering squads across product, operations, and QA — aligning technical execution with business objectives and stakeholder vision.</li>
-          <li>Architected and shipped reusable REST APIs and microservice components, reducing integration time for downstream teams by 35%.</li>
-          <li>Conducted structured peer code reviews enforcing clean code principles, SOLID design, and security best practices across the codebase.</li>
-          <li>Mentored junior and mid-level engineers, running internal knowledge-sharing sessions on system design, API patterns, and cloud deployment.</li>
+          <li>Cut average API response latency by <strong>35%</strong> across 3 Node.js/Python microservices via Redis caching, async processing, and TypeScript-typed contract boundaries — reducing timeout incidents by 50%.</li>
+          <li>Raised unit and integration test coverage from under <strong>20% to 75%</strong> across services by establishing Jest and Pytest suites with hard CI/CD coverage gates.</li>
+          <li>Reduced mean time to detect production incidents from hours to under <strong>15 minutes</strong> by shipping structured logging into AWS CloudWatch and Sentry error tracking.</li>
+          <li>Delivered <strong>8+ full-stack features end-to-end</strong> — TypeScript/React frontend, Node.js/Python backend, MySQL schema, Docker, Kubernetes, post-release monitoring — with a 100% on-time record.</li>
+          <li>Accelerated team velocity by <strong>40% per sprint</strong> by embedding GitHub Copilot, Claude Code, and Cursor AI into the engineering workflow.</li>
+          <li>Raised PR quality scores by <strong>30%</strong> and cut review cycle from 3 days to under 1 by mentoring 3 mid-level engineers through bi-weekly code reviews.</li>
         </ul>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-top">
-          <div class="exp-company">Tribugs Pvt Ltd</div>
-          <div class="exp-period">Sep 2021 – May 2022</div>
-        </div>
-        <div class="exp-title">Sr. Software Engineer</div>
-        <div class="exp-location">📍 Nagpur, Maharashtra</div>
+      <div class="exp-item reveal">
+        <div class="exp-top"><div class="exp-co">Tribugs Pvt. Ltd.</div><span class="exp-period">Sep 2021 – May 2022</span></div>
+        <div class="exp-role">Senior Software Engineer</div>
+        <div class="exp-loc">📍 Nagpur, Maharashtra</div>
+        <div class="exp-stack"><span class="exp-stag">Magento 2</span><span class="exp-stag">PHP</span><span class="exp-stag">MySQL</span><span class="exp-stag">Varnish</span><span class="exp-stag">Linux</span></div>
         <ul class="exp-bullets">
-          <li>Resolved 100+ Magento issues, maintaining 99.95% uptime for website stability.</li>
-          <li>Performed regular patching, security audits, and backups of Magento-based stores.</li>
-          <li>Identified and resolved performance bottlenecks improving overall system speed.</li>
+          <li>Sustained <strong>99.95% platform uptime</strong> across production Magento 2 environments by resolving 100+ critical issues and automating backup and log-rotation workflows.</li>
+          <li>Halved <strong>mean-time-to-recovery (MTTR)</strong> for P1 incidents by implementing real-time Slack-integrated alerting and authoring runbooks for the 10 most frequent failure scenarios.</li>
+          <li>Improved page performance by <strong>25%</strong> by profiling slow queries, adding composite indexes, and configuring Varnish caching for peak-traffic pages.</li>
         </ul>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-top">
-          <div class="exp-company">Pragmatic Techsoft Pvt Ltd</div>
-          <div class="exp-period">Sep 2020 – Sep 2021</div>
-        </div>
-        <div class="exp-title">Sr. Software Engineer</div>
-        <div class="exp-location">📍 Pune, Maharashtra</div>
+      <div class="exp-item reveal">
+        <div class="exp-top"><div class="exp-co">Pragmatic Techsoft Pvt. Ltd.</div><span class="exp-period">Sep 2020 – Sep 2021</span></div>
+        <div class="exp-role">Senior Software Engineer</div>
+        <div class="exp-loc">📍 Pune, Maharashtra</div>
+        <div class="exp-stack"><span class="exp-stag">WordPress</span><span class="exp-stag">PHP</span><span class="exp-stag">REST APIs</span><span class="exp-stag">JavaScript</span><span class="exp-stag">MySQL</span></div>
         <ul class="exp-bullets">
-          <li>Reduced website loading time by 20% by optimizing WordPress plugins.</li>
-          <li>Integrated cutting-edge technologies into existing systems for enhanced functionality.</li>
+          <li>Cut frontend load time by <strong>20%</strong> (4.8s → 3.8s) by auditing 12 plugins, lazy-loading assets, and implementing cache-control headers — directly improving Core Web Vitals.</li>
+          <li>Saved operations team <strong>~8 hours/week</strong> by integrating 3 REST API services (payment, SMS, analytics) via standardised PHP service-layer adapters.</li>
         </ul>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-top">
-          <div class="exp-company">Everseen Pvt Ltd</div>
-          <div class="exp-period">Dec 2019 – Nov 2020</div>
-        </div>
-        <div class="exp-title">Sr. Software Engineer</div>
-        <div class="exp-location">📍 Pune, Maharashtra</div>
+      <div class="exp-item reveal">
+        <div class="exp-top"><div class="exp-co">Everseen Pvt. Ltd.</div><span class="exp-period">Dec 2019 – Nov 2020</span></div>
+        <div class="exp-role">Senior Software Engineer</div>
+        <div class="exp-loc">📍 Pune, Maharashtra</div>
+        <div class="exp-stack"><span class="exp-stag">PHP</span><span class="exp-stag">Python</span><span class="exp-stag">MySQL</span><span class="exp-stag">REST APIs</span><span class="exp-stag">Postman</span><span class="exp-stag">Newman</span><span class="exp-stag">CI</span></div>
         <ul class="exp-bullets">
-          <li>Engineered and shipped AI-driven retail analytics features, reducing user-reported defects by 30%.</li>
-          <li>Streamlined internal QA workflows, cutting regression cycle time through automated test coverage.</li>
-          <li>Engineered and shipped AI-driven retail analytics features, reducing user-reported defects by 30%.</li>
-          <li>Streamlined internal QA workflows, cutting regression cycle time through automated test coverage.</li>
+          <li>Reduced user-reported defect rate by <strong>30%</strong> over two quarters by introducing structured RCA and adding API integration tests via Postman/Newman on every CI build.</li>
+          <li>Delivered <strong>4 feature modules</strong> on schedule, each owned from architecture through QA handoff and post-release monitoring with no milestone slippage.</li>
         </ul>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-top">
-          <div class="exp-company">Izeetek Solutions</div>
-          <div class="exp-period">May 2019 – Dec 2019</div>
-        </div>
-        <div class="exp-title">Sr. Software Engineer</div>
-        <div class="exp-location">📍 Pune, Maharashtra</div>
+      <div class="exp-item reveal">
+        <div class="exp-top"><div class="exp-co">Izeetek Solutions</div><span class="exp-period">May 2019 – Dec 2019</span></div>
+        <div class="exp-role">Senior Software Engineer</div>
+        <div class="exp-loc">📍 Pune, Maharashtra</div>
+        <div class="exp-stack"><span class="exp-stag">PHP</span><span class="exp-stag">MySQL</span><span class="exp-stag">JavaScript</span><span class="exp-stag">REST APIs</span></div>
         <ul class="exp-bullets">
-          <li>Developed innovative software solutions by uncovering pain points and mapping them to effective solutions.</li>
-          <li>Determined system specifications, standards, and programming requirements for robust scalable solutions.</li>
+          <li>Reduced requirement-to-deployment cycle from <strong>3 weeks to 11 days</strong> by designing reusable PHP service-layer patterns across 6 complex feature implementations.</li>
+          <li>Cut new engineer onboarding time by <strong>~2 weeks</strong> by authoring the team's first system specification and programming standards document.</li>
         </ul>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-top">
-          <div class="exp-company">Aptara Pvt Ltd</div>
-          <div class="exp-period">May 2018 – Mar 2019</div>
-        </div>
-        <div class="exp-title">Software Engineer</div>
-        <div class="exp-location">📍 Pune, Maharashtra</div>
+      <div class="exp-item reveal">
+        <div class="exp-top"><div class="exp-co">IQuest Pvt. Ltd.</div><span class="exp-period">Jul 2017 – Mar 2019</span></div>
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-loc">📍 Pune, Maharashtra</div>
+        <div class="exp-stack"><span class="exp-stag">PHP</span><span class="exp-stag">MySQL</span><span class="exp-stag">JavaScript</span><span class="exp-stag">SDLC</span></div>
         <ul class="exp-bullets">
-          <li>Designed and coded software per technical specifications ensuring high quality and performance.</li>
-          <li>Evaluated technical proposals and executed system enhancements following full SDLC.</li>
+          <li>Contributed to <strong>on-time delivery of 3 client releases</strong> by designing and coding feature modules per technical specifications across the full SDLC.</li>
         </ul>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-top">
-          <div class="exp-company">Fulcrum Worldwide Pvt Ltd</div>
-          <div class="exp-period">Jul 2016 – Jul 2017</div>
-        </div>
-        <div class="exp-title">Software Engineer</div>
-        <div class="exp-location">📍 Pune, Maharashtra</div>
+      <div class="exp-item reveal">
+        <div class="exp-top"><div class="exp-co">Fulcrum Worldwide Pvt. Ltd.</div><span class="exp-period">Jul 2016 – Jul 2017</span></div>
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-loc">📍 Pune, Maharashtra</div>
+        <div class="exp-stack"><span class="exp-stag">Magento 2</span><span class="exp-stag">PHP</span><span class="exp-stag">MySQL</span><span class="exp-stag">JavaScript</span><span class="exp-stag">REST APIs</span></div>
         <ul class="exp-bullets">
-          <li>Created Magento modules including custom payment gateways and third-party integrations.</li>
-          <li>Collaborated with cross-functional teams to design, develop, and launch new e-commerce websites.</li>
-          <li>Managed multiple projects simultaneously adhering to strict deadlines and budget constraints.</li>
+          <li>Delivered <strong>20+ custom Magento modules</strong> — payment gateway integrations, third-party API connectors — on time and within budget.</li>
+          <li>Launched <strong>3 e-commerce websites</strong> managing parallel workstreams with product, QA, and client stakeholders without missing a milestone.</li>
         </ul>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-top">
-          <div class="exp-company">Oxcytech System</div>
-          <div class="exp-period">Dec 2013 – Jun 2016</div>
-        </div>
-        <div class="exp-title">PHP Developer</div>
-        <div class="exp-location">📍 Pune, Maharashtra</div>
+      <div class="exp-item reveal">
+        <div class="exp-top"><div class="exp-co">Oxcytech System</div><span class="exp-period">Dec 2013 – Jun 2016</span></div>
+        <div class="exp-role">PHP Developer</div>
+        <div class="exp-loc">📍 Pune, Maharashtra</div>
+        <div class="exp-stack"><span class="exp-stag">PHP</span><span class="exp-stag">MySQL</span><span class="exp-stag">HTML</span><span class="exp-stag">CSS</span><span class="exp-stag">JavaScript</span></div>
         <ul class="exp-bullets">
-          <li>Crafted tailored PHP web applications from requirements analysis through to production deployment.</li>
-          <li>Maintained and extended legacy codebases, improving performance and reducing technical debt.</li>
-          <li>Crafted tailored PHP web applications from requirements analysis through to production deployment.</li>
-          <li>Maintained and extended legacy codebases, improving performance and reducing technical debt.</li>
+          <li>Built <strong>10+ custom PHP web applications</strong> from functional analysis through production deployment, establishing core full-stack fundamentals across a 2.5-year tenure.</li>
         </ul>
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-tag">// Projects</div>
-    <h2 class="section-title">Key Projects</h2>
-    <p class="section-sub">Featured builds and client work that highlight my technical range — from AI SaaS to enterprise e-commerce.</p>
+<!-- ── PROJECTS ── -->
+<section id="projects-section">
+  <div class="section-wrap">
+    <div class="section-tag">Projects</div>
+    <h2 class="section-h2 reveal">Selected Work</h2>
+    <p class="section-sub reveal reveal-delay-1">Client and open-source work showcasing technical range across AI, e-commerce, and SaaS.</p>
     <div class="projects-grid">
 
-      <div class="project-card project-card--featured">
-        <div class="project-number project-number--featured">✦ Featured Project · Open Source</div>
-        <div class="project-name">DocMind <span style="font-size:0.7rem;color:var(--accent3);font-weight:700;letter-spacing:0.1em;vertical-align:middle;border:1px solid rgba(67,233,123,0.3);padding:0.15rem 0.5rem;border-radius:999px;">LIVE</span></div>
-        <div class="project-desc">
-          A multi-tenant document intelligence SaaS powered by retrieval-augmented generation (RAG). Teams upload their knowledge base and query it conversationally — with semantic search, token tracking, and a full evaluation harness. Built for accuracy, speed, and self-hosting.
-        </div>
-        <div style="margin: 0.25rem 0 0.25rem; font-size:0.78rem; color:var(--muted); line-height:1.6;">
-          <span style="color:var(--accent3);">→</span> Multi-tenant auth &amp; tenant isolation &nbsp;·&nbsp; <span style="color:var(--accent3);">→</span> Vector search with pgvector + ChromaDB &nbsp;·&nbsp; <span style="color:var(--accent3);">→</span> Ollama local LLM &amp; OpenAI fallback &nbsp;·&nbsp; <span style="color:var(--accent3);">→</span> Celery async processing &nbsp;·&nbsp; <span style="color:var(--accent3);">→</span> Redis caching &amp; token budgets
-        </div>
-        <div class="project-stack">
-          <span class="stack-tag stack-tag--featured">FastAPI</span>
-          <span class="stack-tag stack-tag--featured">PostgreSQL</span>
-          <span class="stack-tag stack-tag--featured">ChromaDB</span>
-          <span class="stack-tag stack-tag--featured">pgvector</span>
-          <span class="stack-tag stack-tag--featured">Ollama</span>
-          <span class="stack-tag stack-tag--featured">Celery</span>
-          <span class="stack-tag stack-tag--featured">Redis</span>
-          <span class="stack-tag stack-tag--featured">Docker</span>
-          <span class="stack-tag stack-tag--featured">Python</span>
-        </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">Project 01</div>
+        <div class="proj-name">Thinkproject</div>
+        <div class="proj-desc">Led a cross-functional team of senior engineers to deliver product features from stakeholder requirements through production for a construction project management platform — owning technical prioritisation, full-stack implementation, and release coordination.</div>
+        <div class="proj-stack"><span class="proj-tag">Python</span><span class="proj-tag">Django</span><span class="proj-tag">Node.js</span><span class="proj-tag">MySQL</span><span class="proj-tag">JavaScript</span></div>
       </div>
 
-      <div class="project-card">
-        <div class="project-number">Project 01</div>
-        <div class="project-name">Thinkproject</div>
-        <div class="project-desc">Led a team of senior engineers to implement product features based on stakeholder needs for a construction project management platform.</div>
-        <div class="project-stack">
-          <span class="stack-tag">HTML5</span>
-          <span class="stack-tag">Node.js</span>
-          <span class="stack-tag">Python</span>
-          <span class="stack-tag">Django</span>
-          <span class="stack-tag">MySQL</span>
-        </div>
+      <div class="proj-card reveal reveal-delay-1">
+        <div class="proj-num">Project 02</div>
+        <div class="proj-name">Magento 2 – Odoo Connector</div>
+        <div class="proj-desc">Built a bi-directional sync module between Magento 2 and Odoo handling customers, categories, products, orders, and invoices — processing ~1,000 records per sync cycle with conflict resolution logic.</div>
+        <div class="proj-stack"><span class="proj-tag">Magento 2</span><span class="proj-tag">Odoo</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span></div>
       </div>
 
-      <div class="project-card">
-        <div class="project-number">Project 02</div>
-        <div class="project-name">Global Furniture Group</div>
-        <div class="project-desc">Designed and developed Magento 2 modules per client specifications, mentored junior engineers in an Agile development environment.</div>
-        <div class="project-stack">
-          <span class="stack-tag">Magento 2</span>
-          <span class="stack-tag">Node.js</span>
-          <span class="stack-tag">PHP</span>
-          <span class="stack-tag">MySQL</span>
-        </div>
+      <div class="proj-card reveal reveal-delay-2">
+        <div class="proj-num">Project 03</div>
+        <div class="proj-name">Global Furniture Group</div>
+        <div class="proj-desc">Designed and developed Magento 2 modules per client specifications, mentored junior engineers in Agile environment, and delivered e-commerce functionality across full project lifecycle.</div>
+        <div class="proj-stack"><span class="proj-tag">Magento 2</span><span class="proj-tag">PHP</span><span class="proj-tag">Node.js</span><span class="proj-tag">MySQL</span></div>
       </div>
 
-      <div class="project-card">
-        <div class="project-number">Project 03</div>
-        <div class="project-name">Tiffin Management</div>
-        <div class="project-desc">Built a Magento 2–Odoo sync module handling 1,000+ records — synchronizing customers, categories, products, orders and invoices bidirectionally.</div>
-        <div class="project-stack">
-          <span class="stack-tag">Html</span>
-          <span class="stack-tag">Codeigniter</span>
-          <span class="stack-tag">Mysql</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-number">Project 04</div>
-        <div class="project-name">Covifight.info</div>
-        <div class="project-desc">Built a cron-powered WordPress app for real-time pandemic data. Implemented automated backups, log rotation, and report generation.</div>
-        <div class="project-stack">
-          <span class="stack-tag">WordPress</span>
-          <span class="stack-tag">PHP</span>
-          <span class="stack-tag">JavaScript</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-number">Project 05</div>
-        <div class="project-name">Commissionly</div>
-        <div class="project-desc">Developed software solutions by studying information needs and collaborating with project managers. Diagnosed complex technical issues and delivered efficient fixes.</div>
-        <div class="project-stack">
-          <span class="stack-tag">PHP</span>
-          <span class="stack-tag">MySQL</span>
-          <span class="stack-tag">jQuery</span>
-          <span class="stack-tag">AJAX</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-number">Project 06</div>
-        <div class="project-name">Tealeaves (Magento)</div>
-        <div class="project-desc">Built and integrated custom Magento extensions, connected payment gateways, shipping APIs, and ERP/CRM systems. Debugged and fixed complex frontend & backend issues.</div>
-        <div class="project-stack">
-          <span class="stack-tag">Magento</span>
-          <span class="stack-tag">PHP</span>
-          <span class="stack-tag">MySQL</span>
-          <span class="stack-tag">jQuery</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-number">Project 07</div>
-        <div class="project-name">Evise eLearning</div>
-        <div class="project-desc">Acted as technical lead — customized pages, refactored code for maintainability, and integrated external tools into the project ecosystem.</div>
-        <div class="project-stack">
-          <span class="stack-tag">PHP</span>
-          <span class="stack-tag">MySQL</span>
-          <span class="stack-tag">JavaScript</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-number">Project 08</div>
-        <div class="project-name"><a href="https://www.medicinehouse.com" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Medicine House ↗</a></div>
-        <div class="project-desc">E-commerce platform for pain treatment products and educational resources. Users can browse pain treatment information, read books online, and purchase titles directly through the store.</div>
-        <div class="project-name"><a href="https://www.medicinehouse.com" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:none;">Medicine House ↗</a></div>
-        <div class="project-desc">E-commerce platform for pain treatment products and educational resources. Users can browse pain treatment information, read books online, and purchase titles directly through the store.</div>
-        <div class="project-stack">
-          <span class="stack-tag">WordPress</span>
-          <span class="stack-tag">MySQL</span>
-          <span class="stack-tag">HTML</span>
-          <span class="stack-tag">CSS</span>
-          <span class="stack-tag">jQuery</span>
-          <span class="stack-tag">WordPress</span>
-          <span class="stack-tag">MySQL</span>
-          <span class="stack-tag">HTML</span>
-          <span class="stack-tag">CSS</span>
-          <span class="stack-tag">jQuery</span>
-          <span class="stack-tag">JavaScript</span>
-        </div>
+      <div class="proj-card reveal">
+        <div class="proj-num">Project 04</div>
+        <div class="proj-name">Tealeaves (Magento)</div>
+        <div class="proj-desc">Built and integrated custom Magento extensions, connected payment gateways, shipping APIs, and ERP/CRM systems. Debugged complex frontend and backend issues across full codebase.</div>
+        <div class="proj-stack"><span class="proj-tag">Magento 2</span><span class="proj-tag">PHP</span><span class="proj-tag">MySQL</span><span class="proj-tag">jQuery</span></div>
       </div>
 
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-tag">// Contact</div>
-    <h2 class="section-title">Let's Connect</h2>
-    <p class="section-sub">Open to new opportunities, collaborations, or just a good tech conversation.</p>
-    <a href="mailto:owais.khalilahmed@gmail.com" class="btn-primary" style="display:inline-flex;">Send Me an Email ✉️</a>
-    <div class="contact-grid">
-      <a href="mailto:owais.khalilahmed@gmail.com" class="contact-pill">
-        <span class="contact-pill-icon">✉️</span>
-        owais.khalilahmed@gmail.com
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="section-wrap contact-section">
+    <div class="section-tag" style="justify-content:center">Contact</div>
+    <h2 class="section-h2 reveal">Let's Build Something</h2>
+    <p class="section-sub reveal reveal-delay-1">Open to senior IC roles, remote-first opportunities, and interesting technical collaborations.</p>
+    <a href="mailto:owaisfarooqui.dev@gmail.com" class="contact-email-btn reveal reveal-delay-2">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      owaisfarooqui.dev@gmail.com
+    </a>
+    <div class="contact-links reveal reveal-delay-3">
+      <a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank" rel="noopener noreferrer" class="c-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
       </a>
-      <a href="tel:+918806006301" class="contact-pill">
-        <span class="contact-pill-icon">📱</span>
+      <a href="https://github.com/farooqui-owais" target="_blank" rel="noopener noreferrer" class="c-link">
+        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+        GitHub
+      </a>
+      <a href="tel:+918806006301" class="c-link">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.58a16 16 0 0 0 6 6l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         +91 8806006301
       </a>
-    
-      <a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank" rel="noopener noreferrer" class="contact-pill">
-        <span class="contact-pill-icon">💼</span>
-        LinkedIn Profile
-      </a>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    Designed & built with ♥ — <span>Owaise Farooqui</span> © 2026
-  </footer>
+<!-- ── FOOTER ── -->
+<footer>
+  <span>Owaise Farooqui © 2026</span>
+  <span>Built with precision · Pune, Maharashtra</span>
+  <div style="display:flex;gap:1.5rem">
+    <a href="https://www.linkedin.com/in/owaise-farooqui" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/farooqui-owais" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <a href="mailto:owaisfarooqui.dev@gmail.com">Email</a>
+  </div>
+</footer>
 
+<script>
+(function(){
+  // scroll reveal
+  const obs=new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');obs.unobserve(e.target)}})
+  },{threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+  // nav scroll tint
+  const nav=document.querySelector('nav');
+  window.addEventListener('scroll',()=>{
+    nav.style.background=window.scrollY>60?'rgba(6,6,8,0.97)':'rgba(6,6,8,0.8)'
+  },{passive:true});
+})();
+</script>
 </body>
 </html>
